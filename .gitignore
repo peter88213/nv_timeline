@@ -1,0 +1,7 @@
+/test/work/
+/test/temp/
+/test/nv_timeline.pyw
+/build/
+/Timeline-snippets/
+*.pyc
+*.bak

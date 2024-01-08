@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE novx SYSTEM "novx_1_0.dtd">
+<?xml-stylesheet href="novx.css" type="text/css"?>
+<novx version="1.0" xml:lang="None-None">
+  <PROJECT />
+  <CHAPTERS>
+    <CHAPTER id="ch1">
+      <Title>Chapter 1</Title>
+      <SECTION id="sc3">
+        <Title>(6)Die dritte Szene</Title>
+        <Desc>
+          <p>Das ist die &lt;dritte&gt; Szene.</p>
+        </Desc>
+        <Date>0001-01-01</Date>
+        <Time>00:00:00</Time>
+      </SECTION>
+      <SECTION id="sc5">
+        <Title>New Scene</Title>
+        <Date>0001-01-01</Date>
+        <Time>00:00:00</Time>
+      </SECTION>
+      <SECTION id="sc4">
+        <Title>Die vierte Szene</Title>
+        <Date>0052-05-08</Date>
+        <Time>02:20:00</Time>
+        <LastsDays>2</LastsDays>
+      </SECTION>
+      <SECTION id="sc2">
+        <Title>Die erste Szene</Title>
+        <Desc>
+          <p>Dieses Ereignis wird nicht beschrieben.</p>
+        </Desc>
+        <Date>0166-05-12</Date>
+        <Time>09:33:00</Time>
+      </SECTION>
+      <SECTION id="sc1">
+        <Title>(3)Die &lt;zweite&gt; Szene</Title>
+        <Date>2016-12-26</Date>
+        <Time>14:11:16</Time>
+      </SECTION>
+    </CHAPTER>
+  </CHAPTERS>
+  <CHARACTERS />
+  <LOCATIONS />
+  <ITEMS />
+  <ARCS />
+  <PROJECTNOTES />
+</novx>
