@@ -55,7 +55,7 @@ INI_FILEPATH = '.noveltree/config'
 class Plugin():
     """Plugin class for synchronization with Timeline."""
     VERSION = '@release'
-    NOVELYST_API = '1.0'
+    NOVELTREE_API = '1.0'
     DESCRIPTION = 'Synchronize with Timeline'
     URL = 'https://peter88213.github.io/noveltree_timeline'
     _HELP_URL = 'https://peter88213.github.io/noveltree_timeline/usage'
@@ -163,7 +163,7 @@ class Plugin():
 
         kwargs = self._get_configuration(self._mdl.prjFile.filePath)
         target = TlFile(timelinePath, **kwargs)
-        source = self._mdl.prjFile
+        source = NovxFile(self._mdl.prjFile.filePath)
         message = ''
         try:
             source.novel = Novel(tree=NvTree())

@@ -5,6 +5,15 @@
 ## Changelog
 
 
+### v1.0.1
+
+- Fix the plugin API version constant.
+- Bugfix: Use a NovxFile instance as export source.
+- Update the build process.
+
+Based on novxlib v1.0.0
+Compatibility: noveltree v1.0 API
+
 ### v1.0.0
 
 - Release under the GPLv3 license.
