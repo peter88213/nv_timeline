@@ -4,6 +4,8 @@ The [noveltree](https://peter88213.github.io/noveltree/) Python program helps au
 
 The *noveltree_timeline* plugin synchronizes noveltree projects with [Timeline](http://thetimelineproj.sourceforge.net/).
 
+![Screenshot](Screenshots/screen01.png)
+
 ## Features
 
 - Create a timeline from a *noveltree* project.
