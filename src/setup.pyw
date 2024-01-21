@@ -4,11 +4,11 @@
 Version @release
 
 Copyright (c) 2024 Peter Triesberger
-For further information see https://github.com/peter88213/noveltree_timeline
+For further information see https://github.com/peter88213/noveltree_collection
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
-import sys
 import os
+import sys
 from shutil import copytree
 from shutil import copyfile
 from shutil import copy2
@@ -20,17 +20,8 @@ except ModuleNotFoundError:
     sys.exit(1)
 
 PLUGIN = 'nv_timeline.py'
-CONFIGURATION = 'nv_timeline.ini'
-APPNAME = 'nv_timeline'
 VERSION = ' @release'
-APP = f'{APPNAME}.py'
-INI_FILE = f'{APPNAME}.ini'
-INI_PATH = '/config/'
-SAMPLE_PATH = 'sample/'
-SUCCESS_MESSAGE = '''
-$Appname is installed here:
-$Apppath
-'''
+CONFIGURATION = 'nv_timeline.ini'
 
 root = Tk()
 processInfo = Label(root, text='')
@@ -42,54 +33,14 @@ def output(text):
     processInfo.config(text=('\n').join(message))
 
 
-def open_folder(installDir):
-    """Open an installation folder window in the file manager.
-    """
-    try:
-        os.startfile(os.path.normpath(installDir))
-        # Windows
-    except:
-        try:
-            os.system('xdg-open "%s"' % os.path.normpath(installDir))
-            # Linux
-        except:
-            try:
-                os.system('open "%s"' % os.path.normpath(installDir))
-                # Mac
-            except:
-                pass
-
-
-def install(novxlibPath):
-    """Install the script."""
-
-    # Create a general novxlib installation directory, if necessary.
-    os.makedirs(novxlibPath, exist_ok=True)
-    installDir = f'{novxlibPath}{APPNAME}'
-    cnfDir = f'{installDir}{INI_PATH}'
-    os.makedirs(cnfDir, exist_ok=True)
-
-    # Install configuration files, if needed.
-    try:
-        with os.scandir(SAMPLE_PATH) as files:
-            for file in files:
-                if not os.path.isfile(f'{cnfDir}{file.name}'):
-                    copyfile(f'{SAMPLE_PATH}{file.name}', f'{cnfDir}{file.name}')
-                    output(f'Copying "{file.name}"')
-                else:
-                    output(f'Keeping "{file.name}"')
-    except:
-        pass
-
-
 if __name__ == '__main__':
     scriptPath = os.path.abspath(sys.argv[0])
     scriptDir = os.path.dirname(scriptPath)
     os.chdir(scriptDir)
 
     # Open a tk window.
-    root.geometry("800x600")
-    root.title(f'Install {APPNAME}{VERSION}')
+    root.geometry("600x150")
+    root.title(f'Install {PLUGIN}{VERSION}')
     header = Label(root, text='')
     header.pack(padx=5, pady=5)
 
@@ -115,7 +66,7 @@ if __name__ == '__main__':
         # Install the configuration file.
         configDir = f'{noveltreeDir}/config'
         if os.path.isfile(f'{configDir}/{CONFIGURATION}'):
-            output(f'Skipping configuration file')
+            output(f'Keeping configuration file')
         else:
             os.makedirs(configDir, exist_ok=True)
             copy2(f'sample/{CONFIGURATION}', configDir)
