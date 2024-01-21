@@ -15,31 +15,51 @@ A [noveltree](https://peter88213.github.io/noveltree/) plugin providing synchron
 
 The plugin adds a **Timeline** entry to the *noveltree* main menu, a **Create from Timeline** to the **File > New** submenu, and a **Timeline plugin Online Help** entry to the **Help** menu. 
 
+---
+
+# Operation
+
+---
+
 ## Command reference
+
+---
 
 ### Timeline > Information 
 
 - Show information about an existing Timeline project, if any. Timeline and noveltree file dates are compared.
 
+---
+
 ### Timeline > Create or update the timeline
 
 If a timeline exists, update it from noveltree, otherwise  createa new timeline.
+
+---
 
 ### Timeline > Update the project
 
 Update the noveltree project from the timeline, if existing. 
 
+---
+
 ### Timeline > Edit the timeline
 
 Open the project's timeline, if existing, with the Timeline application. Lock the project.
 
-## File > New > Create from Timeline...
+---
+
+### File > New > Create from Timeline...
 
 Open a file dialog to select a timeline. If no noveltree project with the timeline's file name exists, create a new one from the timeline.
+
+---
 
 ## Custom configuration
 
 You can override the default settings by providing a configuration file. Be always aware that faulty entries may cause program errors or unreadable Timeline projects. If you change a configuration inbetween, previously synchronized projects might no longer match. 
+
+---
 
 ### Global configuration
 
@@ -48,9 +68,13 @@ An optional global configuration file can be placed in the configuration directo
   
 The setup script installs a sample configuration file containing noveltree_timeline's default values. You can modify or delete it. 
 
+---
+
 ### Local project configuration
 
 An optional project configuration file named `yw-nv-timelinei` can be placed in your project directory, i.e. the folder containing your noveltree and Timeline project files. It is only applied to this project. Its entries override noveltree_timeline's built-in constants as well as the global configuration, if any.
+
+---
 
 ### How to provide/modify a configuration file
 
@@ -79,14 +103,17 @@ new_event_spacing = 1
 
 ```
 
+---
 
 ### How to reset the configuration to defaults
 
 Just delete your global and local configuration files.
 
-
+---
 
 ## Conventions
+
+---
 
 ### General
 - The noveltree project file and the Timeline file are located in the same directory.
@@ -94,6 +121,7 @@ Just delete your global and local configuration files.
 - Either a timeline or a noveltree project is generated from the other file for the first time. After that, the two files can be synchronized against each other.
 - **Please keep in mind:** Synchronizing means overwriting target data with source data. Since noveltree_timeline works in both directions, there is always a danger of confusing source and target, thus losing changes. So if the program asks you for confirmation to overwrite a file, better check if it's actually the target file.
 
+---
 
 ### On the noveltree side
 
@@ -105,6 +133,7 @@ Just delete your global and local configuration files.
 - Changes to the section type may add or remove the corresponding event during synchronization.
 - Adding or removing sections will add or remove the corresponding event during synchronization.
 
+---
 
 ### On the Timeline side
 
@@ -119,6 +148,7 @@ Just delete your global and local configuration files.
 - The section structure of an existing noveltree project can not be changed in Timeline. Adding/removing events, or adding/removing section IDs from event labels will *not* add or remove the corresponding section during synchronization. 
 - When creating events from sections without date/time information, the dates are automatically generated with a one-day difference, starting from the noveltree project's reference date. 
 
+---
 
 ### Known limitations
 

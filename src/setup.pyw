@@ -11,6 +11,7 @@ import sys
 import os
 from shutil import copytree
 from shutil import copyfile
+from shutil import copy2
 from pathlib import Path
 try:
     from tkinter import *
@@ -19,6 +20,7 @@ except ModuleNotFoundError:
     sys.exit(1)
 
 PLUGIN = 'nv_timeline.py'
+CONFIGURATION = 'nv_timeline.ini'
 APPNAME = 'nv_timeline'
 VERSION = ' @release'
 APP = f'{APPNAME}.py'
@@ -80,23 +82,6 @@ def install(novxlibPath):
         pass
 
 
-def install_plugin(novxlibPath):
-    """Install a noveltree plugin if noveltree is installed."""
-    if os.path.isfile(f'./{PLUGIN}'):
-        noveltreeDir = f'{novxlibPath}noveltree'
-        pluginDir = f'{noveltreeDir}/plugin'
-        output(f'Installing noveltree plugin at "{os.path.normpath(pluginDir)}"')
-        os.makedirs(pluginDir, exist_ok=True)
-        copyfile(PLUGIN, f'{pluginDir}/{PLUGIN}')
-        output(f'Copying "{PLUGIN}"')
-    else:
-        output('Error: noveltree plugin file not found.')
-
-    # Install the localization files.
-    copytree('locale', f'{noveltreeDir}/locale', dirs_exist_ok=True)
-    output(f'Copying "locale"')
-
-
 if __name__ == '__main__':
     scriptPath = os.path.abspath(sys.argv[0])
     scriptDir = os.path.dirname(scriptPath)
@@ -126,6 +111,15 @@ if __name__ == '__main__':
         # Install the localization files.
         copytree('locale', f'{novelystDir}/locale', dirs_exist_ok=True)
         output(f'Copying "locale"')
+
+        # Install the configuration file.
+        configDir = f'{novelystDir}/config'
+        if os.path.isfile(f'{configDir}/{CONFIGURATION}'):
+            output(f'Skipping configuration file')
+        else:
+            os.makedirs(configDir, exist_ok=True)
+            copy2(f'sample/{CONFIGURATION}', configDir)
+            output(f'Copying configuration file')
 
     else:
         output(f'ERROR: Cannot find a novelyst installation at "{novelystDir}"')

@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### v1.0.2
+
+- Setup copies the sample configuration file
+
+Based on novxlib v1.0.0
+Compatibility: noveltree v1.0 API
+
 ### v1.0.1
 
 - Fix the plugin API version constant.
