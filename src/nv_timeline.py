@@ -58,7 +58,7 @@ class Plugin():
     NOVELTREE_API = '1.0'
     DESCRIPTION = 'Synchronize with Timeline'
     URL = 'https://peter88213.github.io/noveltree_timeline'
-    _HELP_URL = 'https://peter88213.github.io/noveltree_timeline/usage'
+    _HELP_URL = 'https://peter88213.github.io/noveltree-help/noveltree_timeline/'
 
     SETTINGS = dict(
         section_label='Section',

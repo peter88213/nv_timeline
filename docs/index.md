@@ -21,9 +21,9 @@ The *noveltree_timeline* plugin synchronizes noveltree projects with [Timeline](
 
 ## Download and install
 
-[Download the latest release (version 1.0.2)](https://github.com/peter88213/noveltree_timeline/raw/main/dist/noveltree_timeline_v1.0.2.zip)
+[Download the latest release (version 1.0.3)](https://github.com/peter88213/noveltree_timeline/raw/main/dist/noveltree_timeline_v1.0.3.zip)
 
-- Extract the "noveltree_timeline_v1.0.2" folder from the downloaded zipfile "noveltree_timeline_v1.0.2.zip".
+- Extract the "noveltree_timeline_v1.0.3" folder from the downloaded zipfile "noveltree_timeline_v1.0.3.zip".
 - Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
 
 ---
