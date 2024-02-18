@@ -55,10 +55,10 @@ INI_FILEPATH = '.noveltree/config'
 class Plugin():
     """Plugin class for synchronization with Timeline."""
     VERSION = '@release'
-    NOVELTREE_API = '1.0'
+    NOVELTREE_API = '1.8'
     DESCRIPTION = 'Synchronize with Timeline'
-    URL = 'https://peter88213.github.io/nv_timeline'
-    _HELP_URL = 'https://peter88213.github.io/noveltree-help/nv_timeline/'
+    URL = 'https://github.com/peter88213/nv_timeline'
+    _HELP_URL = f'https://peter88213.github.io/{_("nvhelp-en")}/nv_timeline/'
 
     SETTINGS = dict(
         section_label='Section',

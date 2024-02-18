@@ -1,10 +1,10 @@
 # nv_timeline
 
-The [noveltree](https://peter88213.github.io/noveltree/) Python program helps authors organize novels.  
+The [noveltree](https://github.com/peter88213/noveltree/) Python program helps authors organize novels.  
 
 The *nv_timeline* plugin synchronizes noveltree projects with [Timeline](http://thetimelineproj.sourceforge.net/).
 
-![Screenshot](Screenshots/screen01.png)
+![Screenshot](docs/Screenshots/screen01.png)
 
 ## Features
 
@@ -16,7 +16,7 @@ The *nv_timeline* plugin synchronizes noveltree projects with [Timeline](http://
 ## Requirements
 
 - [Timeline 2.4+](https://sourceforge.net/projects/thetimelineproj/). Versions below 2.4 do not support labels, which are necessary for synchronization with yWriter.
-- [noveltree](https://peter88213.github.io/noveltree/) version 1.0+
+- [noveltree](https://github.com/peter88213/noveltree/) version 1.8+
 
 
 ## Download and install
@@ -28,11 +28,11 @@ The *nv_timeline* plugin synchronizes noveltree projects with [Timeline](http://
 
 ---
 
-[Changelog](changelog)
+[Changelog](docs/changelog.md)
 
 ## Usage and conventions
 
-See the [instructions for use](usage)
+See the [instructions for use](docs/usage.md)
 
 ## License
 

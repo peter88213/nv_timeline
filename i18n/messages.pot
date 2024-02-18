@@ -3,8 +3,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0.3\n"
-"POT-Creation-Date: 2024-02-17 10:17:28\n"
+"Project-Id-Version: 1.1.0\n"
+"POT-Creation-Date: 2024-02-18 16:25:53\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -108,6 +108,9 @@ msgid "newer"
 msgstr ""
 
 msgid "noveltree project"
+msgstr ""
+
+msgid "nvhelp-en"
 msgstr ""
 
 msgid "older"

@@ -1,8 +1,8 @@
-[Project homepage](https://peter88213.github.io/nv_timeline) > Instructions for use
+[Project homepage](https://github.com/peter88213/nv_timeline) > Instructions for use
 
 --- 
 
-A [noveltree](https://peter88213.github.io/noveltree/) plugin providing synchronization with Timeline. 
+A [noveltree](https://github.com/peter88213/noveltree/) plugin providing synchronization with Timeline. 
 
 ---
 
@@ -19,7 +19,7 @@ The plugin adds a **Timeline** entry to the *noveltree* main menu, a **Create fr
 
 # Operation
 
-See the [online help](https://peter88213.github.io/noveltree-help/nv_timeline/).
+See the [online help](https://peter88213.github.io/nvhelp-en/nv_timeline/).
 
 ---
 
