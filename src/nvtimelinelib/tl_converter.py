@@ -17,7 +17,7 @@ from novxlib.novx_globals import Error
 
 
 class TlConverter(Converter):
-    """A converter class for noveltree and Timeline."""
+    """A converter class for novelibre and Timeline."""
 
     def run(self, sourcePath, **kwargs):
         """Create source and target objects and run conversion.
@@ -26,7 +26,7 @@ class TlConverter(Converter):
             sourcePath: str -- the source file path.
 
         The direction of the conversion is determined by the source file type.
-        Only noveltree project files and Timeline files are accepted.
+        Only novelibre project files and Timeline files are accepted.
         """
         self.newFile = None
         if not os.path.isfile(sourcePath):
@@ -39,13 +39,13 @@ class TlConverter(Converter):
             sourceFile = TlFile(sourcePath, **kwargs)
             targetFile = NovxFile(f'{fileName}{NovxFile.EXTENSION}', **kwargs)
             if os.path.isfile(f'{fileName}{NovxFile.EXTENSION}'):
-                # Update existing noveltree project from timeline
+                # Update existing novelibre project from timeline
                 self.import_to_novx(sourceFile, targetFile)
             else:
-                # Create new noveltree project from timeline
+                # Create new novelibre project from timeline
                 self.create_novx(sourceFile, targetFile)
         elif fileExtension == NovxFile.EXTENSION:
-            # Update existing timeline from noveltree project
+            # Update existing timeline from novelibre project
             sourceFile = NovxFile(sourcePath, **kwargs)
             targetFile = TlFile(f'{fileName}{TlFile.EXTENSION}', **kwargs)
             self.export_from_novx(sourceFile, targetFile)
@@ -54,7 +54,7 @@ class TlConverter(Converter):
             self.ui.set_status(f'!{_("File type is not supported")}: "{norm_path(sourcePath)}".')
 
     def export_from_novx(self, source, target):
-        """Convert from noveltree project to other file format.
+        """Convert from novelibre project to other file format.
 
         Positional arguments:
             source -- NovxFile subclass instance.

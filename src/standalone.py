@@ -35,7 +35,7 @@ def run(sourcePath, silentMode=True, installDir='.'):
     if silentMode:
         ui = Ui('')
     else:
-        ui = UiTk(f'{_("Synchronize Timeline and noveltree")} @release')
+        ui = UiTk(f'{_("Synchronize Timeline and novelibre")} @release')
         set_icon(ui.root, icon='tLogo32')
 
     #--- Try to get persistent configuration data

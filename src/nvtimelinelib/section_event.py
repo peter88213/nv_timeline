@@ -56,28 +56,28 @@ class SectionEvent(Section):
             endDateTime: str -- event end date/time as stored in Timeline.
             isUnspecific: str -- if True, convert date to Day.
         
-        Because noveltree can not process years before 1, 
+        Because novelibre can not process years before 1, 
         they are saved for Timeline use and replaced with 
-        a 'default negative date' for noveltree use.
+        a 'default negative date' for novelibre use.
         """
         # Save instance variables for Timeline use.
         self._startDateTime = startDateTime
         self._endDateTime = endDateTime
 
-        # Save instance variables for noveltree use.
+        # Save instance variables for novelibre use.
         dtIsValid = True
-        # The date/time combination is within the range noveltree can process.
+        # The date/time combination is within the range novelibre can process.
 
-        # Prevent two-figure years from becoming "completed" by noveltree.
+        # Prevent two-figure years from becoming "completed" by novelibre.
         dt = startDateTime.split(' ')
         if dt[0].startswith('-'):
             startYear = -1 * int(dt[0].split('-')[1])
             dtIsValid = False
-            # "BC" year (noveltree won't process it).
+            # "BC" year (novelibre won't process it).
         else:
             startYear = int(dt[0].split('-')[0])
         if startYear < MINYEAR:
-            # Substitute date/time, so noveltree would not prefix them with '19' or '20'.
+            # Substitute date/time, so novelibre would not prefix them with '19' or '20'.
             self.date = Section.NULL_DATE
             self.time = Section.NULL_TIME
             dtIsValid = False
@@ -106,7 +106,7 @@ class SectionEvent(Section):
                 self.date = None
 
     def merge_date_time(self, source, defaultDay=0):
-        """Set date/time related variables from a noveltree-generated source section.
+        """Set date/time related variables from a novelibre-generated source section.
                 
         Positional arguments:
             source -- Section instance with date/time to merge.

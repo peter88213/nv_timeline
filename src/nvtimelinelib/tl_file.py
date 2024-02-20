@@ -44,7 +44,7 @@ class TlFile(File):
             
         Required keyword arguments:
             section_label: str -- event label marking "section" events.
-            section_color: str -- color for events imported as sections from noveltree.
+            section_color: str -- color for events imported as sections from novelibre.
             new_event_spacing: str -- Days between events with automatically generated dates.  
         
         Extends the superclass constructor.
@@ -133,7 +133,7 @@ class TlFile(File):
             try:
                 title = event.find('text').text
                 title = remove_contId(self.novel.sections[scId], title)
-                title = self._convert_to_noveltree(title)
+                title = self._convert_to_novelibre(title)
                 self.novel.sections[scId].title = title
             except:
                 self.novel.sections[scId].title = f'Section {scId}'
@@ -264,7 +264,7 @@ class TlFile(File):
                 self.novel.tree.append(chId, scId)
                 if source.sections[scId].title:
                     title = source.sections[scId].title
-                    title = self._convert_from_noveltree(title)
+                    title = self._convert_from_novelibre(title)
                     title = add_contId(self.novel.sections[scId], title)
                     self.novel.sections[scId].title = title
                 self.novel.sections[scId].desc = source.sections[scId].desc
@@ -361,8 +361,8 @@ class TlFile(File):
                 os.replace(f'{self.filePath}.bak', self.filePath)
             raise Error(f'{_("Cannot write file")}: "{norm_path(self.filePath)}".')
 
-    def _convert_to_noveltree(self, text):
-        """Unmask brackets in noveltree section titles.
+    def _convert_to_novelibre(self, text):
+        """Unmask brackets in novelibre section titles.
         
         Positional arguments:
             text -- string to convert.
@@ -377,8 +377,8 @@ class TlFile(File):
                 text = text.lstrip()
         return text
 
-    def _convert_from_noveltree(self, text, quick=False):
-        """Mask brackets in noveltree section titles.
+    def _convert_from_novelibre(self, text, quick=False):
+        """Mask brackets in novelibre section titles.
         
         Positional arguments:
             text -- string to convert.

@@ -76,11 +76,11 @@ msgstr "Projekt sichern und die Zeitleiste {}?"
 msgid "Sunday"
 msgstr "Sonntag"
 
-msgid "The project \"{}\" was created with a newer noveltree version."
-msgstr "Das Projekt \"{}\" wurde mit einer neueren Version von noveltree erzeugt."
+msgid "The project \"{}\" was created with a newer novelibre version."
+msgstr "Das Projekt \"{}\" wurde mit einer neueren Version von novelibre erzeugt."
 
-msgid "The project \"{}\" was created with an outdated noveltree version."
-msgstr "Das Projekt \"{}\" wurde mit einer veralteten Version von noveltree erzeugt."
+msgid "The project \"{}\" was created with an outdated novelibre version."
+msgstr "Das Projekt \"{}\" wurde mit einer veralteten Version von novelibre erzeugt."
 
 msgid "Thursday"
 msgstr "Donnerstag"
@@ -106,8 +106,8 @@ msgstr "erzeugen"
 msgid "newer"
 msgstr "neuer"
 
-msgid "noveltree project"
-msgstr "noveltree-Projekt"
+msgid "novelibre project"
+msgstr "novelibre-Projekt"
 
 msgid "nvhelp-en"
 msgstr "nvhelp-en"
@@ -118,6 +118,6 @@ msgstr "älter"
 msgid "update"
 msgstr "aktualisieren"
 
-msgid "{0} file is {1} than the noveltree project.\n (last saved on {2})"
-msgstr "{0}-Datei ist {1} als das noveltree-Projekt.\n (zuletzt gespeichert: {2})"
+msgid "{0} file is {1} than the novelibre project.\n (last saved on {2})"
+msgstr "{0}-Datei ist {1} als das novelibre-Projekt.\n (zuletzt gespeichert: {2})"
 

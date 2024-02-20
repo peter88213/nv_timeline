@@ -1,4 +1,4 @@
-"""Timeline sync plugin for noveltree.
+"""Timeline sync plugin for novelibre.
 
 Version @release
 Requires Python 3.6+
@@ -49,7 +49,7 @@ except:
 APPLICATION = 'Timeline'
 PLUGIN = f'{APPLICATION} plugin v@release'
 INI_FILENAME = 'nv_timeline.ini'
-INI_FILEPATH = '.noveltree/config'
+INI_FILEPATH = '.novelibre/config'
 
 
 class Plugin():
@@ -104,7 +104,7 @@ class Plugin():
         self._ui.mainMenu.entryconfig(APPLICATION, state='normal')
 
     def _create_novx(self):
-        """Create a noveltree project from a timeline."""
+        """Create a novelibre project from a timeline."""
         timelinePath = filedialog.askopenfilename(
             filetypes=[(TlFile.DESCRIPTION, TlFile.EXTENSION)],
             defaultextension=TlFile.EXTENSION,
@@ -138,7 +138,7 @@ class Plugin():
             self._ui.set_status(message)
 
     def _export_from_novx(self):
-        """Update or create a timeline from the noveltree project."""
+        """Update or create a timeline from the novelibre project."""
         if not self._mdl.prjFile:
             return
 
@@ -199,7 +199,7 @@ class Plugin():
         return configData
 
     def _import_to_novx(self):
-        """Update the noveltree project from a timeline."""
+        """Update the novelibre project from a timeline."""
         if not self._mdl.prjFile:
             return
 
@@ -247,7 +247,7 @@ class Plugin():
                 else:
                     cmp = _('older')
                 fileDate = datetime.fromtimestamp(timestamp).replace(microsecond=0).isoformat(sep=' ')
-                message = _('{0} file is {1} than the noveltree project.\n (last saved on {2})').format(APPLICATION, cmp, fileDate)
+                message = _('{0} file is {1} than the novelibre project.\n (last saved on {2})').format(APPLICATION, cmp, fileDate)
             except:
                 message = _('Cannot determine file date.')
         else:

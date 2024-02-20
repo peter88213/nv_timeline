@@ -71,7 +71,7 @@ if __name__ == '__main__':
             copy2(f'sample/{CONFIGURATION}', configDir)
             output(f'Copying configuration file')
     else:
-        output(f'ERROR: Cannot find a noveltree installation at "{applicationDir}"')
+        output(f'ERROR: Cannot find a novelibre installation at "{applicationDir}"')
 
     root.quitButton = Button(text="Quit", command=quit)
     root.quitButton.config(height=1, width=30)

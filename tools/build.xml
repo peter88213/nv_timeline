@@ -2,7 +2,7 @@
 <project name="nv_timeline" basedir=".">
 	<property name="version" value="2.0.0" />
 	<property name="test-app" value="nv_timeline" />
-	<property name="noveltree-plugin" value="nv_timeline" />
+	<property name="novelibre-plugin" value="nv_timeline" />
 	
 	<property name="source-path" location="../src" />
 	<property name="test-path" location="../test" />

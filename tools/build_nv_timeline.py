@@ -1,4 +1,4 @@
-"""Build an nv-timeline  noveltree plugin.
+"""Build an nv-timeline  novelibre plugin.
         
 In order to distribute a single script without dependencies, 
 this script "inlines" all modules imported from the novxlib package.
