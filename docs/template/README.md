@@ -22,7 +22,7 @@ The *nv_timeline* plugin synchronizes noveltree projects with [Timeline](http://
 ## Requirements
 
 - [Timeline 2.4+](https://sourceforge.net/projects/thetimelineproj/). Versions below 2.4 do not support labels, which are necessary for synchronization with yWriter.
-- [noveltree](https://github.com/peter88213/noveltree/) version 1.8+
+- [noveltree](https://github.com/peter88213/noveltree/) version 2.0+
 
 
 ## Download and install

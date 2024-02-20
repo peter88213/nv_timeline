@@ -69,7 +69,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     try:
         homeDir = str(Path.home()).replace('\\', '/')
-        installDir = f'{homeDir}/.noveltree/config'
+        installDir = f'{homeDir}/.novx/config'
     except:
         installDir = '.'
     run(args.sourcePath, args.silent, installDir)
