@@ -264,7 +264,7 @@ class TlFile(File):
                 self.novel.tree.append(chId, scId)
                 if source.sections[scId].title:
                     title = source.sections[scId].title
-                    title = self._convert_from_novelibre(title)
+                    title = self._convert_from_novx(title)
                     title = add_contId(self.novel.sections[scId], title)
                     self.novel.sections[scId].title = title
                 self.novel.sections[scId].desc = source.sections[scId].desc
@@ -377,7 +377,7 @@ class TlFile(File):
                 text = text.lstrip()
         return text
 
-    def _convert_from_novelibre(self, text, quick=False):
+    def _convert_from_novx(self, text, quick=False):
         """Mask brackets in novelibre section titles.
         
         Positional arguments:
