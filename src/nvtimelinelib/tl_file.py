@@ -133,7 +133,7 @@ class TlFile(File):
             try:
                 title = event.find('text').text
                 title = remove_contId(self.novel.sections[scId], title)
-                title = self._convert_to_novelibre(title)
+                title = self._convert_to_novx(title)
                 self.novel.sections[scId].title = title
             except:
                 self.novel.sections[scId].title = f'Section {scId}'
@@ -361,8 +361,8 @@ class TlFile(File):
                 os.replace(f'{self.filePath}.bak', self.filePath)
             raise Error(f'{_("Cannot write file")}: "{norm_path(self.filePath)}".')
 
-    def _convert_to_novelibre(self, text):
-        """Unmask brackets in novelibre section titles.
+    def _convert_to_novx(self, text):
+        """Unmask brackets in novx section titles.
         
         Positional arguments:
             text -- string to convert.
@@ -378,7 +378,7 @@ class TlFile(File):
         return text
 
     def _convert_from_novx(self, text, quick=False):
-        """Mask brackets in novelibre section titles.
+        """Mask brackets in novx section titles.
         
         Positional arguments:
             text -- string to convert.
