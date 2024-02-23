@@ -1,10 +1,10 @@
-[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v2.0.0.zip)
+[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v2.1.0.zip)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
 [![News](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions/1)
 [![Online help](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/nv_timeline/)
 
 
-# nv_timeline
+# ![T](icons/tLogo32.png) nv_timeline
 
 The [novelibre](https://github.com/peter88213/novelibre/) Python program helps authors organize novels.  
 
@@ -27,9 +27,9 @@ The *nv_timeline* plugin synchronizes novelibre projects with [Timeline](http://
 
 ## Download and install
 
-[Download the latest release (version 2.0.0)](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v2.0.0.zip)
+[Download the latest release (version 2.1.0)](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v2.1.0.zip)
 
-- Extract the "nv_timeline_v2.0.0" folder from the downloaded zipfile "nv_timeline_v2.0.0.zip".
+- Extract the "nv_timeline_v2.1.0" folder from the downloaded zipfile "nv_timeline_v2.1.0.zip".
 - Move into this new folder and launch **setup.pyw**. This installs the plugin for the local user.
 
 ---
@@ -39,6 +39,10 @@ The *nv_timeline* plugin synchronizes novelibre projects with [Timeline](http://
 ## Usage and conventions
 
 See the [instructions for use](docs/usage.md)
+
+## Credits
+
+- The logo is made using the free *Pusab* font by Ryoichi Tsunekawa, [Flat-it](http://flat-it.com/).
 
 ## License
 

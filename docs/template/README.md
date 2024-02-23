@@ -4,7 +4,7 @@
 [![Online help](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/nv_timeline/)
 
 
-# nv_timeline
+# ![T](icons/tLogo32.png) nv_timeline
 
 The [novelibre](https://github.com/peter88213/novelibre/) Python program helps authors organize novels.  
 
@@ -39,6 +39,10 @@ The *nv_timeline* plugin synchronizes novelibre projects with [Timeline](http://
 ## Usage and conventions
 
 See the [instructions for use](docs/usage.md)
+
+## Credits
+
+- The logo is made using the free *Pusab* font by Ryoichi Tsunekawa, [Flat-it](http://flat-it.com/).
 
 ## License
 
