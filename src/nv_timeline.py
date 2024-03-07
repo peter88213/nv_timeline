@@ -55,7 +55,7 @@ INI_FILEPATH = '.novelibre/config'
 class Plugin():
     """Plugin class for synchronization with Timeline."""
     VERSION = '@release'
-    API_VERSION = '2.1'
+    API_VERSION = '3.0'
     DESCRIPTION = 'Synchronize with Timeline'
     URL = 'https://github.com/peter88213/nv_timeline'
     _HELP_URL = f'https://peter88213.github.io/{_("nvhelp-en")}/nv_timeline/'
