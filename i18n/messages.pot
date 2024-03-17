@@ -3,8 +3,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 3.0.0\n"
-"POT-Creation-Date: 2024-03-07 23:23:09\n"
+"Project-Id-Version: 3.0.1\n"
+"POT-Creation-Date: 2024-03-17 19:18:48\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -50,13 +50,7 @@ msgstr ""
 msgid "File written"
 msgstr ""
 
-msgid "Friday"
-msgstr ""
-
 msgid "Information"
-msgstr ""
-
-msgid "Monday"
 msgstr ""
 
 msgid "No valid version found in file"
@@ -65,16 +59,10 @@ msgstr ""
 msgid "No {} file available for this project."
 msgstr ""
 
-msgid "Saturday"
-msgstr ""
-
 msgid "Save the project and update it?"
 msgstr ""
 
 msgid "Save the project and {} the timeline?"
-msgstr ""
-
-msgid "Sunday"
 msgstr ""
 
 msgid "The project \"{}\" was created with a newer novelibre version."
@@ -83,22 +71,13 @@ msgstr ""
 msgid "The project \"{}\" was created with an outdated novelibre version."
 msgstr ""
 
-msgid "Thursday"
-msgstr ""
-
 msgid "Timeline plugin Online help"
-msgstr ""
-
-msgid "Tuesday"
 msgstr ""
 
 msgid "Update the project"
 msgstr ""
 
 msgid "Update the timeline?"
-msgstr ""
-
-msgid "Wednesday"
 msgstr ""
 
 msgid "create"

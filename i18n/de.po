@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 3.0.0\n"
-"POT-Creation-Date: 2024-03-07 23:23:09\n"
-"PO-Revision-Date: 2024-03-07 23:23:09\n"
+"Project-Id-Version: 3.0.1\n"
+"POT-Creation-Date: 2024-03-17 19:18:48\n"
+"PO-Revision-Date: 2024-03-17 19:18:48\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -49,14 +49,8 @@ msgstr "Datei existiert bereits"
 msgid "File written"
 msgstr "Datei gespeichert"
 
-msgid "Friday"
-msgstr "Freitag"
-
 msgid "Information"
 msgstr "Information"
-
-msgid "Monday"
-msgstr "Montag"
 
 msgid "No valid version found in file"
 msgstr "Keine gültige Versionsangabe in der Datei gefunden"
@@ -64,17 +58,11 @@ msgstr "Keine gültige Versionsangabe in der Datei gefunden"
 msgid "No {} file available for this project."
 msgstr "Keine {}-Datei für dieses Projekt vorhanden."
 
-msgid "Saturday"
-msgstr "Samstag"
-
 msgid "Save the project and update it?"
 msgstr "Projekt speichern und aktualisieren?"
 
 msgid "Save the project and {} the timeline?"
 msgstr "Projekt sichern und die Zeitleiste {}?"
-
-msgid "Sunday"
-msgstr "Sonntag"
 
 msgid "The project \"{}\" was created with a newer novelibre version."
 msgstr "Das Projekt \"{}\" wurde mit einer neueren Version von novelibre erzeugt."
@@ -82,23 +70,14 @@ msgstr "Das Projekt \"{}\" wurde mit einer neueren Version von novelibre erzeugt
 msgid "The project \"{}\" was created with an outdated novelibre version."
 msgstr "Das Projekt \"{}\" wurde mit einer veralteten Version von novelibre erzeugt."
 
-msgid "Thursday"
-msgstr "Donnerstag"
-
 msgid "Timeline plugin Online help"
 msgstr "Timeline-Plugin Online-Hilfe"
-
-msgid "Tuesday"
-msgstr "Dienstag"
 
 msgid "Update the project"
 msgstr "Das Projekt aktualisieren"
 
 msgid "Update the timeline?"
 msgstr "Die Zeitleiste aktualisieren?"
-
-msgid "Wednesday"
-msgstr "Mittwoch"
 
 msgid "create"
 msgstr "erzeugen"
