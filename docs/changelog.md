@@ -4,6 +4,13 @@
 
 ## Changelog
 
+### v3.1.0
+
+- Library update. Now reading *.novx* version 1.2 files.
+
+Based on novxlib v3.2.0
+Compatibility: novelibre v3.5 API
+
 ### v3.0.1
 
 - Show localized file date/time instead of ISO-formatted date/time.
