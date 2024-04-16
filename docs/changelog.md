@@ -4,6 +4,13 @@
 
 ## Changelog
 
+### v3.3.0
+
+- Add "lock_on_export" option.
+
+Based on novxlib v3.3.0
+Compatibility: novelibre v3.6 API
+
 ### v3.2.0
 
 - Library update. Now reading *.novx* version 1.3 files.

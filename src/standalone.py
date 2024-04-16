@@ -23,12 +23,11 @@ APPNAME = 'nv_timeline'
 SETTINGS = dict(
     section_label='Section',
     section_color='170,240,160',
-)
+    new_event_spacing='1'
+    )
 OPTIONS = dict(
-    ignore_unspecific=False,
-    dhm_to_datetime=False,
-    datetime_to_dhm=False,
-)
+    lock_on_export=False,
+    )
 
 
 def run(sourcePath, silentMode=True, installDir='.'):

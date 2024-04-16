@@ -65,7 +65,9 @@ class Plugin():
         section_color='170,240,160',
         new_event_spacing='1'
     )
-    OPTIONS = {}
+    OPTIONS = dict(
+        lock_on_export=False,
+    )
 
     def install(self, model, view, controller, prefs):
         """Add a submenu to the main menu.
@@ -256,13 +258,12 @@ class Plugin():
 
     def _launch_application(self):
         """Launch Timeline with the current project."""
-        if not self._mdl.prjFile:
-            return
-
-        timelinePath = f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}{TlFile.EXTENSION}'
-        if os.path.isfile(timelinePath):
-            if self._ctrl.lock():
+        if self._mdl.prjFile:
+            timelinePath = f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}{TlFile.EXTENSION}'
+            if os.path.isfile(timelinePath):
+                if self.OPTIONS['lock_on_export']:
+                    self._ctrl.lock()
                 open_document(timelinePath)
-        else:
-            self._ui.set_status(_('!No {} file available for this project.').format(APPLICATION))
+            else:
+                self._ui.set_status(_('!No {} file available for this project.').format(APPLICATION))
 
