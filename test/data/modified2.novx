@@ -1,4 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE novx SYSTEM "novx_1_3.dtd">
 <?xml-stylesheet href="novx.css" type="text/css"?>
-<novx version="1.3" xml:lang="de-DE"><PROJECT><ReferenceDate>2021-07-26</ReferenceDate></PROJECT><CHAPTERS><CHAPTER id="ch1"><Title>Chapter 1</Title><SECTION id="sc5"><Title>New Scene</Title><Day>18</Day><Time>11:00:00</Time><LastsHours>4</LastsHours><LastsMinutes>54</LastsMinutes></SECTION><SECTION id="sc3"><Title>(6)Die dritte Szene</Title><Desc><p>Das ist die &lt;dritte&gt; Szene.</p></Desc><Date>0001-01-01</Date><Time>00:00:00</Time></SECTION><SECTION id="sc2"><Title>Die erste Szene</Title><Desc><p>Dieses Ereignis wird nicht beschrieben.</p></Desc><Date>0166-05-12</Date><Time>09:33:00</Time></SECTION><SECTION id="sc1"><Title>(3)Die &lt;zweite&gt; Szene</Title><Date>1844-02-10</Date><Time>13:34:51</Time><LastsDays>56937</LastsDays><LastsHours>10</LastsHours><LastsMinutes>25</LastsMinutes></SECTION><SECTION id="sc4"><Title>Die vierte Szene</Title><Date>0052-05-08</Date><Time>02:20:00</Time><LastsDays>419169</LastsDays><LastsHours>21</LastsHours><LastsMinutes>40</LastsMinutes></SECTION><SECTION id="sc6"><Title>An other scene</Title><Desc><p>And now, for something completely different.</p></Desc><Date>2021-08-10</Date><Time>19:36:00</Time></SECTION></CHAPTER></CHAPTERS><CHARACTERS /><LOCATIONS /><ITEMS><ITEM id="it1"><Title>Bird</Title><Desc><p>This bird is not dead.</p></Desc></ITEM><ITEM id="it2"><Title>The ministry of silly walk</Title><Desc><p>The place to be.</p></Desc></ITEM></ITEMS><ARCS /><PROJECTNOTES /><PROGRESS><WC><Date>2021-08-10</Date><Count>0</Count><WithUnused>0</WithUnused></WC><WC><Date>2021-08-13</Date><Count>0</Count><WithUnused>0</WithUnused></WC></PROGRESS></novx>
+<novx version="1.3" xml:lang="de-DE">
+  <PROJECT>
+    <ReferenceDate>2021-07-26</ReferenceDate>
+  </PROJECT>
+  <CHAPTERS>
+    <CHAPTER id="ch1">
+      <Title>Chapter 1</Title>
+      <SECTION id="sc5">
+        <Title>New Scene</Title>
+        <Day>18</Day>
+        <Time>11:00:00</Time>
+        <LastsHours>4</LastsHours>
+        <LastsMinutes>54</LastsMinutes>
+      </SECTION>
+      <SECTION id="sc3">
+        <Title>(6)Die dritte Szene</Title>
+        <Desc>
+          <p>Das ist die &lt;dritte&gt; Szene.</p>
+        </Desc>
+        <Date>0001-01-01</Date>
+        <Time>00:00:00</Time>
+      </SECTION>
+      <SECTION id="sc2">
+        <Title>Die erste Szene</Title>
+        <Desc>
+          <p>Dieses Ereignis wird nicht beschrieben.</p>
+        </Desc>
+        <Date>0166-05-12</Date>
+        <Time>09:33:00</Time>
+      </SECTION>
+      <SECTION id="sc1">
+        <Title>(3)Die &lt;zweite&gt; Szene</Title>
+        <Date>1844-02-10</Date>
+        <Time>13:34:51</Time>
+        <LastsDays>56937</LastsDays>
+        <LastsHours>10</LastsHours>
+        <LastsMinutes>25</LastsMinutes>
+      </SECTION>
+      <SECTION id="sc4">
+        <Title>Die vierte Szene</Title>
+        <Date>0052-05-08</Date>
+        <Time>02:20:00</Time>
+        <LastsDays>419169</LastsDays>
+        <LastsHours>21</LastsHours>
+        <LastsMinutes>40</LastsMinutes>
+      </SECTION>
+      <SECTION id="sc6">
+        <Title>An other scene</Title>
+        <Desc>
+          <p>And now, for something completely different.</p>
+        </Desc>
+        <Date>2021-08-10</Date>
+        <Time>19:36:00</Time>
+      </SECTION>
+    </CHAPTER>
+  </CHAPTERS>
+  <CHARACTERS />
+  <LOCATIONS />
+  <ITEMS>
+    <ITEM id="it1">
+      <Title>Bird</Title>
+      <Desc>
+        <p>This bird is not dead.</p>
+      </Desc>
+    </ITEM>
+    <ITEM id="it2">
+      <Title>The ministry of silly walk</Title>
+      <Desc>
+        <p>The place to be.</p>
+      </Desc>
+    </ITEM>
+  </ITEMS>
+  <ARCS />
+  <PROJECTNOTES />
+  <PROGRESS>
+    <WC>
+      <Date>2021-08-10</Date>
+      <Count>0</Count>
+      <WithUnused>0</WithUnused>
+    </WC>
+    <WC>
+      <Date>2021-08-13</Date>
+      <Count>0</Count>
+      <WithUnused>0</WithUnused>
+    </WC>
+  </PROGRESS>
+</novx>
