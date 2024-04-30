@@ -144,6 +144,7 @@ class Plugin():
         if not self._mdl.prjFile:
             return
 
+        self._ui.propertiesView.apply_changes()
         self._ui.restore_status()
         if not self._mdl.prjFile.filePath:
             if not self._ctrl.save_project():
@@ -159,27 +160,23 @@ class Plugin():
                 return
 
             self._ctrl.save_project()
-        elif action == _('update'):
-            if not self._ui.ask_yes_no(_('Update the timeline?')):
-                return
+        elif action == _('update') and not self._ui.ask_yes_no(_('Update the timeline?')):
+            return
 
         kwargs = self._get_configuration(self._mdl.prjFile.filePath)
-        target = TlFile(timelinePath, **kwargs)
         source = NovxFile(self._mdl.prjFile.filePath)
-        message = ''
+        source.novel = Novel(tree=NvTree())
+        target = TlFile(timelinePath, **kwargs)
+        target.novel = Novel(tree=NvTree())
         try:
-            source.novel = Novel(tree=NvTree())
-            target.novel = Novel(tree=NvTree())
             source.read()
             if os.path.isfile(target.filePath):
                 target.read()
             target.write(source.novel)
+            message = f'{_("File written")}: "{norm_path(target.filePath)}".'
         except Error as ex:
             message = f'!{str(ex)}'
-        else:
-            message = f'{_("File written")}: "{norm_path(target.filePath)}".'
-        finally:
-            self._ui.set_status(message)
+        self._ui.set_status(message)
 
     def _get_configuration(self, sourcePath):
         """Return a dictionary with persistent configuration data."""

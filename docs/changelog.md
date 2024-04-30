@@ -5,6 +5,12 @@
 ## Changelog
 
 
+### v3.3.3
+
+- Make sure that changes are applied before checking for modification.
+
+Based on novxlib v3.5.3
+
 ### v3.3.2
 
 - Indent the novx files up to the content paragraph level, but not
