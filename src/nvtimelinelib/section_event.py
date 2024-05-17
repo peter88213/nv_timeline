@@ -26,7 +26,7 @@ class SectionEvent(Section):
         super().__init__()
         self.sectionContent = section.sectionContent
         self.scType = section.scType
-        self.scPacing = section.scPacing
+        self.scene = section.scene
         self.status = section.status
         self.notes = section.notes
         self.tags = section.tags

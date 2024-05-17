@@ -5,6 +5,12 @@
 ## Changelog
 
 
+### v4.0.0
+
+- Library update. Now reading and writing *.novx* version 1.4 files.
+
+Based on novxlib v4.0.0
+
 ### v3.3.3
 
 - Make sure that changes are applied before checking for modification.

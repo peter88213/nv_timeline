@@ -121,7 +121,7 @@ class TlFile(File):
                 sectionMarker = sectionMatch.group()
                 scId = f'{SECTION_PREFIX}{sectionCount}'
                 event.find('labels').text = labels.replace(sectionMarker, scId)
-                self.novel.sections[scId] = SectionEvent(Section(scType=0, status=1, scPacing=0))
+                self.novel.sections[scId] = SectionEvent(Section(scType=0, status=1, scene=0))
                 self.novel.sections[scId].status = 1
             else:
                 try:

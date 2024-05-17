@@ -22,7 +22,7 @@ The *nv_timeline* plugin synchronizes novelibre projects with [Timeline](http://
 ## Requirements
 
 - [Timeline 2.4+](https://sourceforge.net/projects/thetimelineproj/). Versions below 2.4 do not support labels, which are necessary for synchronization with yWriter.
-- [novelibre](https://github.com/peter88213/novelibre/) version 3.6+
+- [novelibre](https://github.com/peter88213/novelibre/) version 4.0+
 
 
 ## Download and install
