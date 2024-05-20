@@ -6,10 +6,9 @@ License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import xml.etree.ElementTree as ET
 from datetime import date, datetime, timedelta, MINYEAR
-from novxlib.model.section import Section
 
 
-class SectionEvent(Section):
+class SectionEvent:
     """Timeline section event representation.
 
     Public instance variables:
@@ -19,11 +18,16 @@ class SectionEvent(Section):
     sectionColor = '170,240,160'
 
     def __init__(self, section):
-        """Initialize instance variables.     
+        """Initialize instance variables from the delegate.
         
-        Extends the superclass method, defining a container ID.
+        Positional arguments:
+            section: Section instance -- delegate.        
         """
-        super().__init__()
+        self._section = section
+        # delegate
+
+        self.title = section.title
+        self.desc = section.desc
         self.sectionContent = section.sectionContent
         self.scType = section.scType
         self.scene = section.scene
@@ -47,6 +51,9 @@ class SectionEvent(Section):
         self.contId = None
         self._startDateTime = None
         self._endDateTime = None
+
+        self.NULL_DATE = section.NULL_DATE
+        self.NULL_TIME = section.NULL_TIME
 
     def set_date_time(self, startDateTime, endDateTime, isUnspecific):
         """Set date/time and, if applicable, duration.
@@ -78,8 +85,8 @@ class SectionEvent(Section):
             startYear = int(dt[0].split('-')[0])
         if startYear < MINYEAR:
             # Substitute date/time, so novelibre would not prefix them with '19' or '20'.
-            self.date = Section.NULL_DATE
-            self.time = Section.NULL_TIME
+            self.date = self.NULL_DATE
+            self.time = self.NULL_TIME
             dtIsValid = False
         else:
             self.date = dt[0]
@@ -115,7 +122,7 @@ class SectionEvent(Section):
             defaultDay -- The day to be set if the section does not have a date or a day.
         """
         #--- Set start date/time.
-        if source.date is not None and source.date != Section.NULL_DATE:
+        if source.date is not None and source.date != self.NULL_DATE:
             # The date is not "BC", so synchronize it.
             if source.time:
                 self._startDateTime = f'{source.date} {source.time}'
@@ -143,7 +150,7 @@ class SectionEvent(Section):
             pass
 
         #--- Set end date/time.
-        if source.date is not None and source.date == Section.NULL_DATE:
+        if source.date is not None and source.date == self.NULL_DATE:
             # The year is two-figure, so do not synchronize.
             if self._endDateTime is None:
                 self._endDateTime = self._startDateTime
@@ -241,3 +248,32 @@ class SectionEvent(Section):
         if xmlEvent.find('default_color') is None:
             ET.SubElement(xmlEvent, 'default_color').text = self.sectionColor
         return dtMin, dtMax
+
+    def to_xml(self, xmlElement):
+        """Use the delegate to build a novx section branch."""
+
+        # Write back the instance variables to the delegate.
+        self._section.title = self.title
+        self._section.desc = self.desc
+        self._section.sectionContent = self.sectionContent
+        self._section.scType = self.scType
+        self._section.scene = self.scene
+        self._section.status = self.status
+        self._section.notes = self.notes
+        self._section.tags = self.tags
+        self._section.appendToPrev = self.appendToPrev
+        self._section.goal = self.goal
+        self._section.conflict = self.conflict
+        self._section.outcome = self.outcome
+        self._section.date = self.date
+        self._section.time = self.time
+        self._section.day = self.day
+        self._section.lastsMinutes = self.lastsMinutes
+        self._section.lastsHours = self.lastsHours
+        self._section.lastsDays = self.lastsDays
+        self._section.characters = self.characters
+        self._section.locations = self.locations
+        self._section.items = self.items
+
+        # Call the delegate method.
+        self._section.to_xml(xmlElement)
