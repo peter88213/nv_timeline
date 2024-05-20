@@ -26,12 +26,8 @@ from tkinter import filedialog
 from tkinter import messagebox
 import webbrowser
 
-from novxlib.model.novel import Novel
-from novxlib.model.nv_tree import NvTree
 from novxlib.novx_globals import norm_path
-from novxlib.config.configuration import Configuration
 from novxlib.file.doc_open import open_document
-from novxlib.novx.novx_file import NovxFile
 from novxlib.novx_globals import Error
 from novxlib.novx_globals import _
 from nvtimelinelib.tl_file import TlFile
@@ -55,7 +51,7 @@ INI_FILEPATH = '.novelibre/config'
 class Plugin():
     """Plugin class for synchronization with Timeline."""
     VERSION = '@release'
-    API_VERSION = '4.0'
+    API_VERSION = '4.1'
     DESCRIPTION = 'Synchronize with Timeline'
     URL = 'https://github.com/peter88213/nv_timeline'
     _HELP_URL = f'https://peter88213.github.io/{_("nvhelp-en")}/nv_timeline/'
@@ -116,10 +112,11 @@ class Plugin():
 
         self._ctrl.close_project()
         root, __ = os.path.splitext(timelinePath)
-        novxPath = f'{root}{NovxFile.EXTENSION}'
+        novxPath = f'{root}{self._mdl.nvService.get_novx_file_extension()}'
         kwargs = self._get_configuration(timelinePath)
+        kwargs['nv_service'] = self._mdl.nvService
         source = TlFile(timelinePath, **kwargs)
-        target = NovxFile(novxPath)
+        target = self._mdl.nvService.make_novx_file(novxPath)
 
         if os.path.isfile(target.filePath):
             self._ui.set_status(f'!{_("File already exists")}: "{norm_path(target.filePath)}".')
@@ -127,7 +124,7 @@ class Plugin():
 
         message = ''
         try:
-            source.novel = Novel(tree=NvTree())
+            source.novel = self._mdl.nvService.make_novel()
             source.read()
             target.novel = source.novel
             target.write()
@@ -164,10 +161,11 @@ class Plugin():
             return
 
         kwargs = self._get_configuration(self._mdl.prjFile.filePath)
-        source = NovxFile(self._mdl.prjFile.filePath)
-        source.novel = Novel(tree=NvTree())
+        kwargs['nv_service'] = self._mdl.nvService
+        source = self._mdl.nvService.make_novx_file(self._mdl.prjFile.filePath)
+        source.novel = self._mdl.nvService.make_novel()
         target = TlFile(timelinePath, **kwargs)
-        target.novel = Novel(tree=NvTree())
+        target.novel = self._mdl.nvService.make_novel()
         try:
             source.read()
             if os.path.isfile(target.filePath):
@@ -189,7 +187,10 @@ class Plugin():
         except:
             pluginCnfDir = '.'
         iniFiles = [f'{pluginCnfDir}/{INI_FILENAME}', f'{sourceDir}/{INI_FILENAME}']
-        configuration = Configuration(self.SETTINGS, self.OPTIONS)
+        configuration = self._mdl.nvService.make_configuration(
+            settings=self.SETTINGS,
+            options=self.OPTIONS
+            )
         for iniFile in iniFiles:
             configuration.read(iniFile)
         configData = {}
@@ -214,11 +215,12 @@ class Plugin():
 
         self._ctrl.save_project()
         kwargs = self._get_configuration(timelinePath)
+        kwargs['nv_service'] = self._mdl.nvService
         source = TlFile(timelinePath, **kwargs)
         target = self._mdl.prjFile
         message = ''
         try:
-            target.novel = Novel(tree=NvTree())
+            target.novel = self._mdl.nvService.make_novel()
             target.read()
             source.novel = target.novel
             source.read()

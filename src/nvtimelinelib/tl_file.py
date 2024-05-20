@@ -10,9 +10,6 @@ import os
 import re
 
 from novxlib.file.file import File
-from novxlib.model.chapter import Chapter
-from novxlib.model.nv_tree import NvTree
-from novxlib.model.section import Section
 from novxlib.novx_globals import CHAPTER_PREFIX
 from novxlib.novx_globals import CH_ROOT
 from novxlib.novx_globals import Error
@@ -50,6 +47,7 @@ class TlFile(File):
         Extends the superclass constructor.
         """
         super().__init__(filePath, **kwargs)
+        self._nvSvc = kwargs['nv_service']
         self._xmlTree = None
         self._sectionMarker = kwargs['section_label']
         SectionEvent.sectionColor = kwargs['section_color']
@@ -121,8 +119,13 @@ class TlFile(File):
                 sectionMarker = sectionMatch.group()
                 scId = f'{SECTION_PREFIX}{sectionCount}'
                 event.find('labels').text = labels.replace(sectionMarker, scId)
-                self.novel.sections[scId] = SectionEvent(Section(scType=0, status=1, scene=0))
-                self.novel.sections[scId].status = 1
+                self.novel.sections[scId] = SectionEvent(
+                    self._nvSvc.make_section(
+                    status=1,
+                    scType=0,
+                    scene=0,
+                    ))
+
             else:
                 try:
                     scId = sectionMatch.group()
@@ -164,8 +167,10 @@ class TlFile(File):
         if isOutline:
             # Create a single chapter and assign all sections to it.
             chId = f'{CHAPTER_PREFIX}1'
-            self.novel.chapters[chId] = Chapter(chType=0)
-            self.novel.chapters[chId].title = f'{_("Chapter")} 1'
+            self.novel.chapters[chId] = self._nvSvc.make_chapter(
+                chType=0,
+                title=f'{_("Chapter")} 1'
+                )
             self.novel.tree.append(CH_ROOT, chId)
             for __, scList in srtSections:
                 for scId in scList:
@@ -240,7 +245,7 @@ class TlFile(File):
 
         #--- Merge first.
         self.novel.chapters = {}
-        self.novel.tree = NvTree()
+        self.novel.tree = self._nvSvc.make_nv_tree()
         # resetting the target structure, just keeping the sections
 
         if source.referenceDate:
@@ -252,7 +257,7 @@ class TlFile(File):
 
         defaultDay = 0
         for chId in source.tree.get_children(CH_ROOT):
-            self.novel.chapters[chId] = Chapter()
+            self.novel.chapters[chId] = self._nvSvc.make_chapter()
             self.novel.tree.append(CH_ROOT, chId)
             for scId in source.tree.get_children(chId):
                 if ignoreUnspecific and source.sections[scId].date is None:
@@ -260,7 +265,7 @@ class TlFile(File):
                     continue
 
                 if not scId in self.novel.sections:
-                    self.novel.sections[scId] = SectionEvent(Section())
+                    self.novel.sections[scId] = SectionEvent(self._nvSvc.make_section())
                 self.novel.tree.append(chId, scId)
                 if source.sections[scId].title:
                     title = source.sections[scId].title

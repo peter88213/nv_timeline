@@ -10,10 +10,11 @@ from novxlib.converter.converter import Converter
 from novxlib.model.novel import Novel
 from novxlib.model.nv_tree import NvTree
 from novxlib.novx.novx_file import NovxFile
+from novxlib.novx_globals import Error
 from novxlib.novx_globals import _
 from novxlib.novx_globals import norm_path
+from nvlib.model.nv_service import NvService
 from nvtimelinelib.tl_file import TlFile
-from novxlib.novx_globals import Error
 
 
 class TlConverter(Converter):
@@ -28,6 +29,7 @@ class TlConverter(Converter):
         The direction of the conversion is determined by the source file type.
         Only novelibre project files and Timeline files are accepted.
         """
+        kwargs['nv_service'] = NvService()
         self.newFile = None
         if not os.path.isfile(sourcePath):
             self.ui.set_status(f'!{_("File not found")}: "{norm_path(sourcePath)}".')
