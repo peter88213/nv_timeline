@@ -1,6 +1,6 @@
 /test/work/
 /test/temp/
-/test/nv_timeline.pyw
+/test/nv_timeline.py
 /build/
 /Timeline-snippets/
 *.pyc

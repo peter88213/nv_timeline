@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.0.1\n"
-"POT-Creation-Date: 2024-05-18 10:33:34\n"
-"PO-Revision-Date: 2024-05-18 10:33:34\n"
+"Project-Id-Version: 4.1.0\n"
+"POT-Creation-Date: 2024-05-21 12:24:17\n"
+"PO-Revision-Date: 2024-05-21 12:24:17\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -15,12 +15,6 @@ msgstr ""
 
 msgid "!No {} file available for this project."
 msgstr "!Keine {}-Datei für dieses Projekt vorhanden."
-
-msgid "1st Edit"
-msgstr "1. Überarbeitung"
-
-msgid "2nd Edit"
-msgstr "2. Überarbeitung"
 
 msgid "Can not process file"
 msgstr "Kann Datei nicht verarbeiten"
@@ -43,12 +37,6 @@ msgstr "Aus Timeline erzeugen..."
 msgid "Create or update the timeline"
 msgstr "Die Zeitleiste erzeugen oder aktualisieren"
 
-msgid "Done"
-msgstr "Fertiggestellt"
-
-msgid "Draft"
-msgstr "Entwurf"
-
 msgid "Edit the timeline"
 msgstr "Die Zeitleiste bearbeiten"
 
@@ -64,29 +52,14 @@ msgstr "Datei gespeichert"
 msgid "Information"
 msgstr "Information"
 
-msgid "No valid version found in file"
-msgstr "Keine gültige Versionsangabe in der Datei gefunden"
-
-msgid "No valid xml root element found in file"
-msgstr "Kein gültiges xml-Wurzelelement in der Datei gefunden"
-
 msgid "No {} file available for this project."
 msgstr "Keine {}-Datei für dieses Projekt vorhanden."
-
-msgid "Outline"
-msgstr "Gliederung"
 
 msgid "Save the project and update it?"
 msgstr "Projekt speichern und aktualisieren?"
 
 msgid "Save the project and {} the timeline?"
 msgstr "Projekt sichern und die Zeitleiste {}?"
-
-msgid "The project \"{}\" was created with a newer novelibre version."
-msgstr "Das Projekt \"{}\" wurde mit einer neueren Version von novelibre erzeugt."
-
-msgid "The project \"{}\" was created with an outdated novelibre version."
-msgstr "Das Projekt \"{}\" wurde mit einer veralteten Version von novelibre erzeugt."
 
 msgid "Timeline plugin Online help"
 msgstr "Timeline-Plugin Online-Hilfe"
@@ -102,9 +75,6 @@ msgstr "erzeugen"
 
 msgid "newer"
 msgstr "neuer"
-
-msgid "novelibre project"
-msgstr "novelibre-Projekt"
 
 msgid "nvhelp-en"
 msgstr "nvhelp-de"
