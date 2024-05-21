@@ -26,10 +26,10 @@ from tkinter import filedialog
 from tkinter import messagebox
 import webbrowser
 
-from novxlib.novx_globals import norm_path
-from novxlib.file.doc_open import open_document
 from novxlib.novx_globals import Error
 from novxlib.novx_globals import _
+from novxlib.novx_globals import norm_path
+from novxlib.novx_globals import open_document
 from nvtimelinelib.tl_file import TlFile
 import tkinter as tk
 
