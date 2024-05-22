@@ -45,7 +45,7 @@ except:
 APPLICATION = 'Timeline'
 PLUGIN = f'{APPLICATION} plugin v@release'
 INI_FILENAME = 'nv_timeline.ini'
-INI_FILEPATH = '.novelibre/config'
+INI_FILEPATH = '.novx/config'
 
 
 class Plugin():

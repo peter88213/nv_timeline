@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### v4.1.1
+
+- Fix the installation directory path.
+
+Compatibility: novelibre v4.1 API
+Based on novxlib v4.1.0
+
 ### v4.1.0
 
 - Library update. Now reading and writing *.novx* version 1.4 files.
