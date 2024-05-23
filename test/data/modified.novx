@@ -2,7 +2,7 @@
 <!DOCTYPE novx SYSTEM "novx_1_4.dtd">
 <?xml-stylesheet href="novx.css" type="text/css"?>
 <novx version="1.4" xml:lang="de-DE">
-  <PROJECT>
+  <PROJECT saveWordCount="1">
     <ReferenceDate>2021-07-26</ReferenceDate>
   </PROJECT>
   <CHAPTERS>
@@ -72,11 +72,6 @@
   <PROGRESS>
     <WC>
       <Date>2021-08-10</Date>
-      <Count>0</Count>
-      <WithUnused>0</WithUnused>
-    </WC>
-    <WC>
-      <Date>2021-08-13</Date>
       <Count>0</Count>
       <WithUnused>0</WithUnused>
     </WC>
