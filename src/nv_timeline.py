@@ -217,7 +217,7 @@ class Plugin():
         kwargs = self._get_configuration(timelinePath)
         kwargs['nv_service'] = self._mdl.nvService
         source = TlFile(timelinePath, **kwargs)
-        target = self._mdl.prjFile
+        target = self._mdl.nvService.make_novx_file(self._mdl.prjFile.filePath, **kwargs)
         message = ''
         try:
             target.novel = self._mdl.nvService.make_novel()
@@ -226,13 +226,11 @@ class Plugin():
             source.read()
             target.novel = source.novel
             target.write()
-        except Error as ex:
-            message = f'!{str(ex)}'
-        else:
             message = f'{_("File written")}: "{norm_path(target.filePath)}".'
             self._ctrl.open_project(filePath=self._mdl.prjFile.filePath, doNotSave=True)
-        finally:
-            self._ui.set_status(f'{message}')
+        except Error as ex:
+            message = f'!{str(ex)}'
+        self._ui.set_status(f'{message}')
 
     def _info(self):
         """Show information about the Timeline file."""

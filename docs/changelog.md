@@ -5,6 +5,16 @@
 ## Changelog
 
 
+### v4.1.3
+
+- Fix a bug where writing the .novx file during update has a side effect 
+  on the project's actual model, replacing the nvTreeview delegate with 
+  a nvTree instance, where not all required methods are implemented. 
+  This bug exists from the very beginning. 
+
+Compatibility: novelibre v4.1 API
+Based on novxlib v4.1.0
+
 ### v4.1.2
 
 - Fix a regression from v4.1.1 (c82cb1c) where the update process 
