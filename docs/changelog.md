@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### v4.1.2
+
+- Fix a regression from v4.1.1 (c82cb1c) where the update process 
+  from timeline fails due to a missing SectionEvent instance variable.
+
+Compatibility: novelibre v4.1 API
+Based on novxlib v4.1.0
+
 ### v4.1.1
 
 - Fix the installation directory path.

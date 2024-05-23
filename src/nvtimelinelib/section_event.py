@@ -47,6 +47,7 @@ class SectionEvent:
         self.characters = section.characters
         self.locations = section.locations
         self.items = section.items
+        self.wordCount = section.wordCount
 
         self.contId = None
         self._startDateTime = None
@@ -274,6 +275,7 @@ class SectionEvent:
         self._section.characters = self.characters
         self._section.locations = self.locations
         self._section.items = self.items
+        self._section.wordCount = self.wordCount
 
         # Call the delegate method.
         self._section.to_xml(xmlElement)
