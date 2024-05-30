@@ -30,6 +30,7 @@ from novxlib.file.doc_open import open_document
 from novxlib.novx_globals import Error
 from novxlib.novx_globals import _
 from novxlib.novx_globals import norm_path
+from nvlib.plugin.plugin_base import PluginBase
 from nvtimelinelib.tl_file import TlFile
 import tkinter as tk
 
@@ -48,10 +49,10 @@ INI_FILENAME = 'nv_timeline.ini'
 INI_FILEPATH = '.novx/config'
 
 
-class Plugin():
+class Plugin(PluginBase):
     """Plugin class for synchronization with Timeline."""
     VERSION = '@release'
-    API_VERSION = '4.1'
+    API_VERSION = '4.3'
     DESCRIPTION = 'Synchronize with Timeline'
     URL = 'https://github.com/peter88213/nv_timeline'
     _HELP_URL = f'https://peter88213.github.io/{_("nvhelp-en")}/nv_timeline/'
@@ -65,12 +66,30 @@ class Plugin():
         lock_on_export=False,
     )
 
+    def disable_menu(self):
+        """Disable menu entries when no project is open.
+        
+        Overrides the superclass method.
+        """
+        self._ui.mainMenu.entryconfig(APPLICATION, state='disabled')
+
+    def enable_menu(self):
+        """Enable menu entries when a project is open.
+        
+        Overrides the superclass method.
+        """
+        self._ui.mainMenu.entryconfig(APPLICATION, state='normal')
+
     def install(self, model, view, controller, prefs):
         """Add a submenu to the main menu.
         
         Positional arguments:
-            controller -- reference to the main controller instance of the application.
+            model -- reference to the main model instance of the application.
             view -- reference to the main view instance of the application.
+            controller -- reference to the main controller instance of the application.
+            prefs -- reference to the application's global dictionary with settings and options.
+        
+        Overrides the superclass method.
         """
         self._mdl = model
         self._ui = view
@@ -92,14 +111,6 @@ class Plugin():
 
         # Add an entry to the Help menu.
         self._ui.helpMenu.add_command(label=_('Timeline plugin Online help'), command=lambda: webbrowser.open(self._HELP_URL))
-
-    def disable_menu(self):
-        """Disable menu entries when no project is open."""
-        self._ui.mainMenu.entryconfig(APPLICATION, state='disabled')
-
-    def enable_menu(self):
-        """Enable menu entries when a project is open."""
-        self._ui.mainMenu.entryconfig(APPLICATION, state='normal')
 
     def _create_novx(self):
         """Create a novelibre project from a timeline."""

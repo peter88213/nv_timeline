@@ -23,6 +23,7 @@ TARGET_FILE = f'{BUILD}nv_timeline.py'
 
 def main():
     inliner.run(SOURCE_FILE, TARGET_FILE, 'nvtimelinelib', '../../nv_timeline/src/')
+    inliner.run(TARGET_FILE, TARGET_FILE, 'nvlib', '../../novelibre/src/')
     inliner.run(TARGET_FILE, TARGET_FILE, 'novxlib', '../../novxlib/src/')
     print('Done.')
 

@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### v4.2.0
+
+- Refactor the code for better maintainability.
+
+Compatibility: novelibre v4.3 API
+Based on novxlib v4.1.0
+
 ### v4.1.3
 
 - Fix a bug where writing the .novx file during update has a side effect 
