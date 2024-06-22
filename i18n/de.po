@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.2.1\n"
-"POT-Creation-Date: 2024-05-30 14:07:22\n"
-"PO-Revision-Date: 2024-05-30 14:07:22\n"
+"Project-Id-Version: 4.2.2\n"
+"POT-Creation-Date: 2024-06-22 08:51:23\n"
+"PO-Revision-Date: 2024-06-22 08:51:23\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -35,10 +35,10 @@ msgid "Create from Timeline..."
 msgstr "Aus Timeline erzeugen..."
 
 msgid "Create or update the timeline"
-msgstr "Die Zeitleiste erzeugen oder aktualisieren"
+msgstr "Den Zeitstrahl erzeugen oder aktualisieren"
 
 msgid "Edit the timeline"
-msgstr "Die Zeitleiste bearbeiten"
+msgstr "Den Zeitstrahl bearbeiten"
 
 msgid "File"
 msgstr "Datei"
@@ -59,7 +59,7 @@ msgid "Save the project and update it?"
 msgstr "Projekt speichern und aktualisieren?"
 
 msgid "Save the project and {} the timeline?"
-msgstr "Projekt sichern und die Zeitleiste {}?"
+msgstr "Projekt sichern und den Zeitstrahl {}?"
 
 msgid "Timeline plugin Online help"
 msgstr "Timeline-Plugin Online-Hilfe"
@@ -68,7 +68,7 @@ msgid "Update the project"
 msgstr "Das Projekt aktualisieren"
 
 msgid "Update the timeline?"
-msgstr "Die Zeitleiste aktualisieren?"
+msgstr "Den Zeitstrahl aktualisieren?"
 
 msgid "create"
 msgstr "erzeugen"

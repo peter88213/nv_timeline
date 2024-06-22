@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="nv_timeline" basedir=".">
-	<property name="version" value="4.2.1" />
+	<property name="version" value="4.2.2" />
 	<property name="test-app" value="nv_timeline" />
 	<property name="novelibre-plugin" value="nv_timeline" />
 	
