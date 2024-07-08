@@ -39,7 +39,7 @@ Download the latest release [nv_timeline_v4.2.2.pyzw](https://github.com/peter88
 Many web browsers recognize the download as an executable file and offer to open it immediately. 
 This starts the installation.
 
-However, depending on the security settings, the browser may 
+However, depending on your security settings, your browser may 
 initially  refuse  to download the executable file. 
 In this case, your confirmation or an additional action is required. 
 If this is not possible, you have the option of downloading 
