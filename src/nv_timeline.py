@@ -31,6 +31,7 @@ from novxlib.novx_globals import Error
 from novxlib.novx_globals import _
 from novxlib.novx_globals import norm_path
 from nvlib.plugin.plugin_base import PluginBase
+from nvtimelinelib.tl_button import TlButton
 from nvtimelinelib.tl_file import TlFile
 import tkinter as tk
 
@@ -71,14 +72,16 @@ class Plugin(PluginBase):
         
         Overrides the superclass method.
         """
-        self._ui.mainMenu.entryconfig(APPLICATION, state='disabled')
+        self._ui.toolsMenu.entryconfig(APPLICATION, state='disabled')
+        self._timelineButton.disable()
 
     def enable_menu(self):
         """Enable menu entries when a project is open.
         
         Overrides the superclass method.
         """
-        self._ui.mainMenu.entryconfig(APPLICATION, state='normal')
+        self._ui.toolsMenu.entryconfig(APPLICATION, state='normal')
+        self._timelineButton.enable()
 
     def install(self, model, view, controller, prefs=None):
         """Add a submenu to the main menu.
@@ -97,22 +100,60 @@ class Plugin(PluginBase):
         self._ui = view
         self._ctrl = controller
 
-        # Create a submenu
-        self._pluginMenu = tk.Menu(self._ui.mainMenu, tearoff=0)
-        position = self._ui.mainMenu.index('end')
-        self._ui.mainMenu.insert_cascade(position, label=APPLICATION, menu=self._pluginMenu)
+        # Create a submenu in the Tools menu.
+        self._pluginMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
+        self._ui.toolsMenu.add_cascade(label=APPLICATION, menu=self._pluginMenu)
+        self._ui.toolsMenu.entryconfig(APPLICATION, state='disabled')
         self._pluginMenu.add_command(label=_('Information'), command=self._info)
         self._pluginMenu.add_separator()
         self._pluginMenu.add_command(label=_('Create or update the timeline'), command=self._export_from_novx)
         self._pluginMenu.add_command(label=_('Update the project'), command=self._import_to_novx)
         self._pluginMenu.add_separator()
-        self._pluginMenu.add_command(label=_('Edit the timeline'), command=self._launch_application)
+        self._pluginMenu.add_command(label=_('Open Timeline'), command=self._launch_application)
 
         # Add an entry to the "File > New" menu.
         self._ui.newMenu.add_command(label=_('Create from Timeline...'), command=self._create_novx)
 
         # Add an entry to the Help menu.
         self._ui.helpMenu.add_command(label=_('Timeline plugin Online help'), command=lambda: webbrowser.open(self._HELP_URL))
+
+        #--- Configure the toolbar.
+
+        # Get the icons.
+        prefs = controller.get_preferences()
+        if prefs.get('large_icons', False):
+            size = 24
+        else:
+            size = 16
+        try:
+            homeDir = str(Path.home()).replace('\\', '/')
+            iconPath = f'{homeDir}/.novx/icons/{size}'
+        except:
+            iconPath = None
+        try:
+            tlIcon = tk.PhotoImage(file=f'{iconPath}/tl.png')
+        except:
+            tlIcon = None
+
+        # Put a Separator on the toolbar.
+        tk.Frame(view.toolbar.buttonBar, bg='light gray', width=1).pack(side='left', fill='y', padx=4)
+
+        # Initialize the operation.
+        self._timelineButton = TlButton(view, _('Open Timeline'), tlIcon, self._launch_application)
+
+    def lock(self):
+        """Inhibit changes on the model.
+        
+        Overrides the superclass method.
+        """
+        self._pluginMenu.entryconfig(_('Update the project'), state='disabled')
+
+    def unlock(self):
+        """Enable changes on the model.
+        
+        Overrides the superclass method.
+        """
+        self._pluginMenu.entryconfig(_('Update the project'), state='normal')
 
     def _create_novx(self):
         """Create a novelibre project from a timeline."""

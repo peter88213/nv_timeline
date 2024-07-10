@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 4.2.2\n"
-"POT-Creation-Date: 2024-07-06 13:29:10\n"
-"PO-Revision-Date: 2024-07-06 13:29:10\n"
+"Project-Id-Version: 4.3.0\n"
+"POT-Creation-Date: 2024-07-10 15:20:18\n"
+"PO-Revision-Date: 2024-07-10 15:20:18\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -37,9 +37,6 @@ msgstr "Aus Timeline erzeugen..."
 msgid "Create or update the timeline"
 msgstr "Den Zeitstrahl erzeugen oder aktualisieren"
 
-msgid "Edit the timeline"
-msgstr "Den Zeitstrahl bearbeiten"
-
 msgid "File"
 msgstr "Datei"
 
@@ -54,6 +51,9 @@ msgstr "Information"
 
 msgid "No {} file available for this project."
 msgstr "Keine {}-Datei für dieses Projekt vorhanden."
+
+msgid "Open Timeline"
+msgstr "Timeline öffnen"
 
 msgid "Save the project and update it?"
 msgstr "Projekt speichern und aktualisieren?"

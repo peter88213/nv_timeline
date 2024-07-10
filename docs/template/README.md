@@ -10,6 +10,9 @@ The [novelibre](https://github.com/peter88213/novelibre/) Python program helps a
 
 The *nv_timeline* plugin synchronizes novelibre projects with [Timeline](http://thetimelineproj.sourceforge.net/).
 
+The plugin adds a **Timeline** submenu to the *novelibre* **Tools** menu and a 
+![Timeline](src/icons/16/tl.png) button to the toolbar.
+
 ![Screenshot](docs/Screenshots/screen01.png)
 
 ## Features
@@ -17,7 +20,7 @@ The *nv_timeline* plugin synchronizes novelibre projects with [Timeline](http://
 - Create a timeline from a *novelibre* project.
 - Create a new *novelibre* project from a timeline.
 - Synchronize *novelibre* sections with corresponding timeline events in both directions.
-
+- Open the project timeline with the Timeline application.
 
 ## Requirements
 
@@ -65,6 +68,7 @@ See the [online manual](https://peter88213.github.io/nvhelp-en/nv_timeline/)
 ## Credits
 
 - The logo is made using the free *Pusab* font by Ryoichi Tsunekawa, [Flat-it](http://flat-it.com/).
+- The Timeline icon is from the [Timeline](http://thetimelineproj.sourceforge.net/) application.
 
 ## License
 

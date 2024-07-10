@@ -64,7 +64,7 @@ def main(zipped=True):
     os.chdir(scriptDir)
 
     # Open a tk window.
-    root.geometry("600x150")
+    root.geometry("600x250")
     root.title(f'Install {PLUGIN}{VERSION}')
     header = Label(root, text='')
     header.pack(padx=5, pady=5)
@@ -84,6 +84,10 @@ def main(zipped=True):
         # Install the localization files.
         copy_tree('locale', applicationDir)
         output(f'Copying "locale"')
+
+        # Install the icons.
+        output('Copying icons ...')
+        copy_tree('icons', applicationDir)
 
         # Provide the sample files.
         output('Copying/replacing sample files ...')

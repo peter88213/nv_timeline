@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### v4.3.0
+
+- Move the **Timeline** submenu from the main menu to the **Tools** menu.
+- Add a "Timeline" button to the button bar.
+
+Compatibility: novelibre v4.3 API
+Based on novxlib v4.4.0
+
 ### v4.2.2
 
 - Update the German translation.
