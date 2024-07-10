@@ -68,7 +68,8 @@ See the [online manual](https://peter88213.github.io/nvhelp-en/nv_timeline/)
 ## Credits
 
 - The logo is made using the free *Pusab* font by Ryoichi Tsunekawa, [Flat-it](http://flat-it.com/).
-- The Timeline icon is from the [Timeline](http://thetimelineproj.sourceforge.net/) application.
+- The Timeline icon is from the [Timeline](http://thetimelineproj.sourceforge.net/) application, 
+  licensed under GPLv3 (see below).
 
 ## License
 
