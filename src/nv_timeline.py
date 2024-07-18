@@ -17,32 +17,20 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
 from datetime import datetime
-import gettext
-import locale
 import os
 from pathlib import Path
-import sys
 from tkinter import filedialog
 from tkinter import messagebox
 import webbrowser
 
 from novxlib.file.doc_open import open_document
 from novxlib.novx_globals import Error
-from novxlib.novx_globals import _
 from novxlib.novx_globals import norm_path
 from nvlib.plugin.plugin_base import PluginBase
+from nvtimelinelib.nvtimeline_globals import _
 from nvtimelinelib.tl_button import TlButton
 from nvtimelinelib.tl_file import TlFile
 import tkinter as tk
-
-# Initialize localization.
-LOCALE_PATH = f'{os.path.dirname(sys.argv[0])}/locale/'
-CURRENT_LANGUAGE = locale.getlocale()[0][:2]
-try:
-    t = gettext.translation('nv_timeline', LOCALE_PATH, languages=[CURRENT_LANGUAGE])
-    _ = t.gettext
-except:
-    pass
 
 APPLICATION = 'Timeline'
 PLUGIN = f'{APPLICATION} plugin v@release'

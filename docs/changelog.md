@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### v4.3.1
+
+- Refactor localization.
+
+Compatibility: novelibre v4.3 API
+Based on novxlib v4.4.0
+
 ### v4.3.0
 
 - Move the **Timeline** submenu from the main menu to the **Tools** menu.

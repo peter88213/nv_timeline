@@ -14,10 +14,10 @@ from novxlib.novx_globals import CHAPTER_PREFIX
 from novxlib.novx_globals import CH_ROOT
 from novxlib.novx_globals import Error
 from novxlib.novx_globals import SECTION_PREFIX
-from novxlib.novx_globals import _
 from novxlib.novx_globals import norm_path
 from novxlib.xml.xml_indent import indent
 from nvtimelinelib.dt_helper import fix_iso_dt
+from nvtimelinelib.nvtimeline_globals import _
 from nvtimelinelib.section_event import SectionEvent
 import xml.etree.ElementTree as ET
 
