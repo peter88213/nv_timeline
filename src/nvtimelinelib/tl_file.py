@@ -382,7 +382,7 @@ class TlFile(File):
                 text = text.lstrip()
         return text
 
-    def _convert_from_novx(self, text, quick=False):
+    def _convert_from_novx(self, text, **kwargs):
         """Mask brackets in novx section titles.
         
         Positional arguments:
