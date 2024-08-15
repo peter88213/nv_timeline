@@ -76,7 +76,7 @@ class TlFile(File):
             Return the stripped string.
             """
             if text:
-                match = re.match('([\(\[][0-9]+[\)\]])', text)
+                match = re.match(r'([\(\[][0-9]+[\)\]])', text)
                 if match:
                     contId = match.group()
                     event.contId = contId
@@ -106,7 +106,7 @@ class TlFile(File):
             sectionMatch = None
             if event.find('labels') is not None:
                 labels = event.find('labels').text
-                sectionMatch = re.search(f'{SECTION_PREFIX}[0-9]+', labels)
+                sectionMatch = re.search(fr'{SECTION_PREFIX}[0-9]+', labels)
                 if isOutline and sectionMatch is None:
                     sectionMatch = re.search(self._sectionMarker, labels)
             if sectionMatch is None:
@@ -303,7 +303,7 @@ class TlFile(File):
             for event in events.iter('event'):
                 if event.find('labels') is not None:
                     labels = event.find('labels').text
-                    sectionMatch = re.search(f'{SECTION_PREFIX}[0-9]+', labels)
+                    sectionMatch = re.search(fr'{SECTION_PREFIX}[0-9]+', labels)
                 else:
                     continue
 
