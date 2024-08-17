@@ -5,42 +5,49 @@
 ## Changelog
 
 
+### Version 4.3.2
+
+- Refactor for future Python versions.
+
+Compatibility: novelibre 4.3 API
+Based on novxlib 4.5.9
+
 ### Version 4.3.1
 
 - Refactor localization.
 
-Compatibility: novelibre version 4.3 API
-Based on novxlib version 4.4.0
+Compatibility: novelibre 4.3 API
+Based on novxlib 4.4.0
 
 ### Version 4.3.0
 
 - Move the **Timeline** submenu from the main menu to the **Tools** menu.
 - Add a "Timeline" button to the button bar.
 
-Compatibility: novelibre version 4.3 API
-Based on novxlib version 4.4.0
+Compatibility: novelibre 4.3 API
+Based on novxlib 4.4.0
 
 ### Version 4.2.2
 
 - Update the German translation.
 
-Compatibility: novelibre version 4.3 API
-Based on novxlib version 4.2.3
+Compatibility: novelibre 4.3 API
+Based on novxlib 4.2.3
 
 ### Version 4.2.1
 
 - Refactor the code for future API update,
   making the prefs argument of the Plugin.install() method optional.
 
-Compatibility: novelibre version 4.3 API
-Based on novxlib version 4.1.0
+Compatibility: novelibre 4.3 API
+Based on novxlib 4.1.0
 
 ### Version 4.2.0
 
 - Refactor the code for better maintainability.
 
-Compatibility: novelibre version 4.3 API
-Based on novxlib version 4.1.0
+Compatibility: novelibre 4.3 API
+Based on novxlib 4.1.0
 
 ### Version 4.1.3
 
@@ -49,37 +56,37 @@ Based on novxlib version 4.1.0
   a nvTree instance, where not all required methods are implemented. 
   This bug exists from the very beginning. 
 
-Compatibility: novelibre version 4.1 API
-Based on novxlib version 4.1.0
+Compatibility: novelibre 4.1 API
+Based on novxlib 4.1.0
 
 ### Version 4.1.2
 
 - Fix a regression from version 4.1.1 (c82cb1c) where the update process 
   from timeline fails due to a missing SectionEvent instance variable.
 
-Compatibility: novelibre version 4.1 API
-Based on novxlib version 4.1.0
+Compatibility: novelibre 4.1 API
+Based on novxlib 4.1.0
 
 ### Version 4.1.1
 
 - Fix the installation directory path.
 
-Compatibility: novelibre version 4.1 API
-Based on novxlib version 4.1.0
+Compatibility: novelibre 4.1 API
+Based on novxlib 4.1.0
 
 ### Version 4.1.0
 
 - Library update. Now reading and writing *.novx* version 1.4 files.
 - Use factory methods and getters from the model's NvService object.
 
-Compatibility: novelibre version 4.1 API
-Based on novxlib version 4.0.1
+Compatibility: novelibre 4.1 API
+Based on novxlib 4.0.1
 
 ### Version 3.3.3
 
 - Make sure that changes are applied before checking for modification.
 
-Based on novxlib version 3.5.3
+Based on novxlib 3.5.3
 
 ### Version 3.3.2
 
@@ -87,55 +94,55 @@ Based on novxlib version 3.5.3
 inline elements within paragraphs.
 - Set the default locale when creating a new project.
 
-Based on novxlib version 3.5.2
+Based on novxlib 3.5.2
 
 ### Version 3.3.1
 
 - Fix a bug where single spaces between emphasized text in section content are lost when writing novx files.
 
-Based on novxlib version 3.5.0
+Based on novxlib 3.5.0
 
 ### Version 3.3.0
 
 - Add "lock_on_export" option.
 
-Based on novxlib version 3.3.0
-Compatibility: novelibre version 3.6 API
+Based on novxlib 3.3.0
+Compatibility: novelibre 3.6 API
 
 ### Version 3.2.0
 
 - Library update. Now reading *.novx* version 1.3 files.
 
-Based on novxlib version 3.3.0
-Compatibility: novelibre version 3.6 API
+Based on novxlib 3.3.0
+Compatibility: novelibre 3.6 API
 
 ### Version 3.1.0
 
 - Library update. Now reading *.novx* version 1.2 files.
 
-Based on novxlib version 3.2.0
-Compatibility: novelibre version 3.5 API
+Based on novxlib 3.2.0
+Compatibility: novelibre 3.5 API
 
 ### Version 3.0.1
 
 - Show localized file date/time instead of ISO-formatted date/time.
 
-Based on novxlib version 3.0.1
-Compatibility: novelibre version 3.0 API
+Based on novxlib 3.0.1
+Compatibility: novelibre 3.0 API
 
 ### Version 3.0.0
 
 - Refactor the code for v3.0 API.
 - Enable the online help in German.
 
-Based on novxlib version 2.0.0
-Compatibility: novelibre version 3.0 API
+Based on novxlib 2.0.0
+Compatibility: novelibre 3.0 API
 
 ### Version 2.1.0
 
 Update for "novelibre".
 
-Based on novxlib version 1.1.0
+Based on novxlib 1.1.0
 
 ### Version 2.0.0
 
@@ -143,29 +150,29 @@ Preparations for renaming the application:
 - Refactor the code for v2.0 API.
 - Change the installation directory in the setup script.
 
-Based on novxlib version 1.1.0
-Compatibility: noveltree version 2.0 API
+Based on novxlib 1.1.0
+Compatibility: noveltree 2.0 API
 
 ### Version 1.1.0
 
 - Re-structure the website; adjust links.
 
-Based on novxlib version 1.1.0
-Compatibility: noveltree version 1.8 API
+Based on novxlib 1.1.0
+Compatibility: noveltree 1.8 API
 
 ### Version 1.0.3
 
 - Switch the online help to https://peter88213.github.io/noveltree-help/.
 
-Based on novxlib version 1.0.0
-Compatibility: noveltree version 1.0 API
+Based on novxlib 1.0.0
+Compatibility: noveltree 1.0 API
 
 ### Version 1.0.2
 
 - Setup copies the sample configuration file
 
-Based on novxlib version 1.0.0
-Compatibility: noveltree version 1.0 API
+Based on novxlib 1.0.0
+Compatibility: noveltree 1.0 API
 
 ### Version 1.0.1
 
@@ -173,12 +180,12 @@ Compatibility: noveltree version 1.0 API
 - Bugfix: Use a NovxFile instance as export source.
 - Update the build process.
 
-Based on novxlib version 1.0.0
-Compatibility: noveltree version 1.0 API
+Based on novxlib 1.0.0
+Compatibility: noveltree 1.0 API
 
 ### Version 1.0.0
 
 - Release under the GPLv3 license.
 
-Based on novxlib version 1.0.0
-Compatibility: noveltree version 1.0 API
+Based on novxlib 1.0.0
+Compatibility: noveltree 1.0 API
