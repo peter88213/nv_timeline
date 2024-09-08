@@ -2,6 +2,7 @@
 /test/temp/
 /test/nv_timeline.py
 /build/
+/build-ref/
 /Timeline-snippets/
 *.pyc
 *.bak

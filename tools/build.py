@@ -1,4 +1,4 @@
-"""Build an nv-timeline  novelibre plugin.
+"""Build the nv_timeline novelibre plugin package.
         
 In order to distribute a single script without dependencies, 
 this script "inlines" all modules imported from the novxlib package.
@@ -12,29 +12,27 @@ License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os
 import sys
+
 sys.path.insert(0, f'{os.getcwd()}/../../novxlib/src')
-import inliner
+from package_builder import PackageBuilder
 
-SOURCE_DIR = '../src/'
-TEST_DIR = '../test/'
-SOURCE_FILE = f'{SOURCE_DIR}nv_timeline.py'
-TEST_FILE = f'{TEST_DIR}nv_timeline.py'
-NVLIB = 'nvlib'
-NV_PATH = '../../novelibre/src/'
-NOVXLIB = 'novxlib'
-NOVX_PATH = '../../novxlib/src/'
+VERSION = '4.3.2'
 
 
-def inline_modules():
-    inliner.run(SOURCE_FILE, TEST_FILE, 'nvtimelinelib', '../../nv_timeline/src/')
-    inliner.run(TEST_FILE, TEST_FILE, NVLIB, NV_PATH)
-    inliner.run(TEST_FILE, TEST_FILE, NOVXLIB, NOVX_PATH)
-    print('Done.')
+class PluginBuilder(PackageBuilder):
+
+    PRJ_NAME = 'nv_timeline'
+    LOCAL_LIB = 'nvtimelinelib'
+    GERMAN_TRANSLATION = True
+
+    def add_extras(self):
+        self.add_sample()
+        self.add_icons()
 
 
 def main():
-    os.makedirs(TEST_DIR, exist_ok=True)
-    inline_modules()
+    pb = PluginBuilder(VERSION)
+    pb.run()
 
 
 if __name__ == '__main__':
