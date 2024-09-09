@@ -23,11 +23,11 @@ from tkinter import filedialog
 from tkinter import messagebox
 import webbrowser
 
+from nvtimelinelib.nvtimeline_globals import _
 from novxlib.file.doc_open import open_document
 from novxlib.novx_globals import Error
 from novxlib.novx_globals import norm_path
 from nvlib.plugin.plugin_base import PluginBase
-from nvtimelinelib.nvtimeline_globals import _
 from nvtimelinelib.tl_button import TlButton
 from nvtimelinelib.tl_file import TlFile
 import tkinter as tk

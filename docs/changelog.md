@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### Version 4.3.3
+
+- Refactor: Change import order for a quick start.
+
+Compatibility: novelibre 4.3 API
+Based on novxlib 4.6.3
+
 ### Version 4.3.2
 
 - Refactor for future Python versions.
