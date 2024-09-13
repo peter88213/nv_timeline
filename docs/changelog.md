@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### Version 4.4.0
+
+- Add a tooltip to the toolbar button.
+
+Compatibility: novelibre 4.11 API
+Based on novxlib 4.6.4
+
 ### Version 4.3.3
 
 - Refactor: Change import order for a quick start.

@@ -41,7 +41,7 @@ INI_FILEPATH = '.novx/config'
 class Plugin(PluginBase):
     """Plugin class for synchronization with Timeline."""
     VERSION = '@release'
-    API_VERSION = '4.3'
+    API_VERSION = '4.11'
     DESCRIPTION = 'Synchronize with Timeline'
     URL = 'https://github.com/peter88213/nv_timeline'
     _HELP_URL = f'https://peter88213.github.io/{_("nvhelp-en")}/nv_timeline/'
