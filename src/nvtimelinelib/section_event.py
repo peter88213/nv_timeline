@@ -27,18 +27,14 @@ class SectionEvent:
         self._section = section
         # delegate
 
-        self.title = section.title
-        self.desc = section.desc
-        self.sectionContent = section.sectionContent
         self.scType = section.scType
         self.scene = section.scene
         self.status = section.status
-        self.notes = section.notes
-        self.tags = section.tags
         self.appendToPrev = section.appendToPrev
         self.goal = section.goal
         self.conflict = section.conflict
         self.outcome = section.outcome
+        self.plotNotes = section.plotNotes
         self.date = section.date
         self.time = section.time
         self.day = section.day
@@ -48,6 +44,12 @@ class SectionEvent:
         self.characters = section.characters
         self.locations = section.locations
         self.items = section.items
+
+        self.title = section.title
+        self.desc = section.desc
+        self.sectionContent = section.sectionContent
+        self.notes = section.notes
+        self.tags = section.tags
         self.wordCount = section.wordCount
 
         self.contId = None
