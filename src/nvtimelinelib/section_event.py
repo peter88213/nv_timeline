@@ -34,7 +34,7 @@ class SectionEvent:
         self.goal = section.goal
         self.conflict = section.conflict
         self.outcome = section.outcome
-        self.plotNotes = section.plotNotes
+        self.plotlineNotes = section.plotlineNotes
         self.date = section.date
         self.time = section.time
         self.day = section.day

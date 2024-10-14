@@ -5,6 +5,13 @@
 ## Changelog
 
 
+### Version 4.4.2
+
+- Fix a regression from version 4.4.1.
+
+Compatibility: novelibre 4.11 API
+Based on novxlib 4.7.1
+
 ### Version 4.4.1
 
 - Complete the SectionEvent initialization.
