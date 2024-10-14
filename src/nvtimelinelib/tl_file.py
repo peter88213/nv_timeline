@@ -113,7 +113,6 @@ class TlFile(File):
                 continue
 
             # The event is labeled as a section.
-            sectionDate = None
             if isOutline:
                 sectionCount += 1
                 sectionMarker = sectionMatch.group()
