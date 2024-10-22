@@ -32,11 +32,6 @@ from nvlib.plugin.plugin_base import PluginBase
 from nvtimelinelib.tl_file import TlFile
 import tkinter as tk
 
-APPLICATION = 'Timeline'
-PLUGIN = f'{APPLICATION} plugin v@release'
-INI_FILENAME = 'nv_timeline.ini'
-INI_FILEPATH = '.novx/config'
-
 
 class Plugin(PluginBase):
     """Plugin class for synchronization with Timeline."""
@@ -46,6 +41,7 @@ class Plugin(PluginBase):
     URL = 'https://github.com/peter88213/nv_timeline'
     _HELP_URL = f'https://peter88213.github.io/{_("nvhelp-en")}/nv_timeline/'
 
+    FEATURE = 'Timeline'
     SETTINGS = dict(
         section_label='Section',
         section_color='170,240,160',
@@ -60,7 +56,7 @@ class Plugin(PluginBase):
         
         Overrides the superclass method.
         """
-        self._ui.toolsMenu.entryconfig(APPLICATION, state='disabled')
+        self._ui.toolsMenu.entryconfig(self.FEATURE, state='disabled')
         self._timelineButton.config(state='disabled')
 
     def enable_menu(self):
@@ -68,7 +64,7 @@ class Plugin(PluginBase):
         
         Overrides the superclass method.
         """
-        self._ui.toolsMenu.entryconfig(APPLICATION, state='normal')
+        self._ui.toolsMenu.entryconfig(self.FEATURE, state='normal')
         self._timelineButton.config(state='normal')
 
     def install(self, model, view, controller, prefs=None):
@@ -90,8 +86,8 @@ class Plugin(PluginBase):
 
         # Create a submenu in the Tools menu.
         self._pluginMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
-        self._ui.toolsMenu.add_cascade(label=APPLICATION, menu=self._pluginMenu)
-        self._ui.toolsMenu.entryconfig(APPLICATION, state='disabled')
+        self._ui.toolsMenu.add_cascade(label=self.FEATURE, menu=self._pluginMenu)
+        self._ui.toolsMenu.entryconfig(self.FEATURE, state='disabled')
         self._pluginMenu.add_command(label=_('Information'), command=self._info)
         self._pluginMenu.add_separator()
         self._pluginMenu.add_command(label=_('Create or update the timeline'), command=self._export_from_novx)
@@ -246,10 +242,10 @@ class Plugin(PluginBase):
             sourceDir = '.'
         try:
             homeDir = str(Path.home()).replace('\\', '/')
-            pluginCnfDir = f'{homeDir}/{INI_FILEPATH}'
+            configDir = f'{homeDir}/.novx/config'
         except:
-            pluginCnfDir = '.'
-        iniFiles = [f'{pluginCnfDir}/{INI_FILENAME}', f'{sourceDir}/{INI_FILENAME}']
+            configDir = '.'
+        iniFiles = [f'{configDir}/nv_timeline.ini', f'{sourceDir}/nv_timeline.ini']
         configuration = self._mdl.nvService.make_configuration(
             settings=self.SETTINGS,
             options=self.OPTIONS
@@ -270,7 +266,7 @@ class Plugin(PluginBase):
         self._ui.propertiesView.apply_changes()
         timelinePath = f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}{TlFile.EXTENSION}'
         if not os.path.isfile(timelinePath):
-            self._ui.set_status(_('!No {} file available for this project.').format(APPLICATION))
+            self._ui.set_status(_('!No {} file available for this project.').format(self.FEATURE))
             return
 
         if self._mdl.isModified and not self._ui.ask_yes_no(_('Save the project and update it?')):
@@ -309,12 +305,12 @@ class Plugin(PluginBase):
                 else:
                     cmp = _('older')
                 fileDate = datetime.fromtimestamp(timestamp).strftime('%c')
-                message = _('{0} file is {1} than the novelibre project.\n (last saved on {2})').format(APPLICATION, cmp, fileDate)
+                message = _('{0} file is {1} than the novelibre project.\n (last saved on {2})').format(self.FEATURE, cmp, fileDate)
             except:
                 message = _('Cannot determine file date.')
         else:
-            message = _('No {} file available for this project.').format(APPLICATION)
-        messagebox.showinfo(PLUGIN, message)
+            message = _('No {} file available for this project.').format(self.FEATURE)
+        messagebox.showinfo(f'{self.FEATURE} plugin v@release', message)
 
     def _launch_application(self):
         """Launch Timeline with the current project."""
@@ -325,5 +321,5 @@ class Plugin(PluginBase):
                     self._ctrl.lock()
                 open_document(timelinePath)
             else:
-                self._ui.set_status(_('!No {} file available for this project.').format(APPLICATION))
+                self._ui.set_status(_('!No {} file available for this project.').format(self.FEATURE))
 
