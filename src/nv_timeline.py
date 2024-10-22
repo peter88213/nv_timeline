@@ -42,6 +42,8 @@ class Plugin(PluginBase):
     _HELP_URL = f'https://peter88213.github.io/{_("nvhelp-en")}/nv_timeline/'
 
     FEATURE = 'Timeline'
+    INI_FILENAME = 'nv_timeline.ini'
+    INI_FILEPATH = '.novx/config'
     SETTINGS = dict(
         section_label='Section',
         section_color='170,240,160',
@@ -242,10 +244,10 @@ class Plugin(PluginBase):
             sourceDir = '.'
         try:
             homeDir = str(Path.home()).replace('\\', '/')
-            configDir = f'{homeDir}/.novx/config'
+            pluginCnfDir = f'{homeDir}/{self.INI_FILEPATH}'
         except:
-            configDir = '.'
-        iniFiles = [f'{configDir}/nv_timeline.ini', f'{sourceDir}/nv_timeline.ini']
+            pluginCnfDir = '.'
+        iniFiles = [f'{pluginCnfDir}/{self.INI_FILENAME}', f'{sourceDir}/{self.INI_FILENAME}']
         configuration = self._mdl.nvService.make_configuration(
             settings=self.SETTINGS,
             options=self.OPTIONS
