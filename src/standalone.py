@@ -11,11 +11,11 @@ import argparse
 import os
 from pathlib import Path
 
+from apptk.view.set_icon_tk import set_icon
 from novxlib.config.configuration import Configuration
-from nvtimelinelib.nvtimeline_globals import _
-from novxlib.ui.set_icon_tk import set_icon
 from novxlib.ui.ui import Ui
 from novxlib.ui.ui_tk import UiTk
+from nvtimelinelib.nvtimeline_globals import _
 from nvtimelinelib.tl_converter import TlConverter
 
 SUFFIX = ''
