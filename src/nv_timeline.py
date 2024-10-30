@@ -312,7 +312,7 @@ class Plugin(PluginBase):
                 message = _('Cannot determine file date.')
         else:
             message = _('No {} file available for this project.').format(self.FEATURE)
-        messagebox.showinfo(f'{self.FEATURE} plugin v@release', message)
+        messagebox.showinfo(f'{self.FEATURE}', message)
 
     def _launch_application(self):
         """Launch Timeline with the current project."""
