@@ -5,6 +5,20 @@
 ## Changelog
 
 
+### Version 4.4.3
+
+- Change the message window title.
+
+Refactor the code for better maintainability:
+
+- Replace global constants with class constants.
+- Remove dead code.
+- Link the source code to the new "apptk" GUI library.
+
+Compatibility: novelibre 4.11 API
+Based on novxlib 5.0.0
+Based on apptk 2.2.0
+
 ### Version 4.4.2
 
 - Fix a regression from version 4.4.1.
