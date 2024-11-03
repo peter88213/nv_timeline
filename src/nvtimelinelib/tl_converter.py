@@ -9,7 +9,7 @@ import os
 from nvlib.model.converter.converter import Converter
 from nvlib.novx_globals import Error
 from nvlib.novx_globals import norm_path
-from nvlib.model.nv_service import NvService
+from nvlib.nv_service import NvService
 from nvtimelinelib.nvtimeline_globals import _
 from nvtimelinelib.tl_file import TlFile
 
