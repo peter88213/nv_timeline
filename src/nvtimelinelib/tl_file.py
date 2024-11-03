@@ -9,13 +9,13 @@ from datetime import timedelta
 import os
 import re
 
-from novxlib.file.file import File
-from novxlib.novx_globals import CHAPTER_PREFIX
-from novxlib.novx_globals import CH_ROOT
-from novxlib.novx_globals import Error
-from novxlib.novx_globals import SECTION_PREFIX
-from novxlib.novx_globals import norm_path
-from novxlib.xml.xml_indent import indent
+from nvlib.model.file.file import File
+from nvlib.novx_globals import CHAPTER_PREFIX
+from nvlib.novx_globals import CH_ROOT
+from nvlib.novx_globals import Error
+from nvlib.novx_globals import SECTION_PREFIX
+from nvlib.novx_globals import norm_path
+from nvlib.model.xml.xml_indent import indent
 from nvtimelinelib.dt_helper import fix_iso_dt
 from nvtimelinelib.nvtimeline_globals import _
 from nvtimelinelib.section_event import SectionEvent

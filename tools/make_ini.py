@@ -9,7 +9,7 @@ License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import sys
 import os
-from novxlib.config.configuration import Configuration
+from nvlib.configuration.configuration import Configuration
 from yw_timeline_ import SETTINGS
 from yw_timeline_ import OPTIONS
 from yw_timeline_ import APPNAME
