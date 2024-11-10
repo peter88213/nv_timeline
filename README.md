@@ -25,7 +25,7 @@ The plugin adds a **Timeline** submenu to the *novelibre* **Tools** menu and a
 ## Requirements
 
 - [Timeline 2.4+](https://sourceforge.net/projects/thetimelineproj/). Versions below 2.4 do not support labels, which are necessary for synchronization with *novelibre*.
-- [novelibre](https://github.com/peter88213/novelibre/) version 4.11+
+- [novelibre](https://github.com/peter88213/novelibre/) version 5.0+
 
 
 ## Download and install
