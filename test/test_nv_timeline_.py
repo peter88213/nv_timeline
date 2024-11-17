@@ -6,9 +6,12 @@ License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
 import os
 from shutil import copyfile
+import sys
 import unittest
 
-import standalone
+from mvclib.view.ui import Ui
+from nvlib.configuration.configuration import Configuration
+from nvtimelinelib.tl_converter import TlConverter
 
 # Test environment
 # The paths are relative to the "test" directory,
@@ -16,6 +19,15 @@ import standalone
 TEST_PATH = os.getcwd() + '/../test'
 TEST_DATA_PATH = TEST_PATH + '/data/'
 TEST_EXEC_PATH = TEST_PATH + '/temp/'
+APPNAME = 'nv_timeline'
+SETTINGS = dict(
+    section_label='Section',
+    section_color='170,240,160',
+    new_event_spacing='1'
+    )
+OPTIONS = dict(
+    lock_on_export=False,
+    )
 
 # Test data
 TEST_NOVX = TEST_EXEC_PATH + 'yw7 Sample Project.novx'
@@ -23,6 +35,28 @@ TEST_YW_BAK = TEST_NOVX + '.bak'
 TEST_TL = TEST_EXEC_PATH + 'yw7 Sample Project.timeline'
 TEST_TL_BAK = TEST_TL + '.bak'
 INI_FILE = 'nv_timeline.ini'
+
+
+def convert(sourcePath, installDir='.'):
+
+    # Try to get persistent configuration data
+    sourceDir = os.path.dirname(sourcePath)
+    iniFileName = f'{APPNAME}.ini'
+    iniFiles = [f'{installDir}/{iniFileName}', f'{sourceDir}/{iniFileName}']
+    configuration = Configuration(SETTINGS, OPTIONS)
+    for iniFile in iniFiles:
+        configuration.read(iniFile)
+    kwargs = {'suffix': ''}
+    kwargs.update(configuration.settings)
+    kwargs.update(configuration.options)
+
+    # Convert the file specified by sourcePath.
+    converter = TlConverter()
+    converter.ui = Ui('')
+    converter.run(sourcePath, **kwargs)
+
+    # Write error message, if any.
+    sys.stderr.write(converter.ui.infoHowText)
 
 
 def read_file(inputFile):
@@ -73,7 +107,7 @@ class NormalOperation(unittest.TestCase):
     def test_tl_to_new_yw(self):
         copyfile(TEST_DATA_PATH + 'outline.timeline', TEST_TL)
         os.chdir(TEST_EXEC_PATH)
-        standalone.run(TEST_TL, silentMode=True)
+        convert(TEST_TL)
         self.assertEqual(read_file(TEST_NOVX), read_file(TEST_DATA_PATH + 'new.novx'))
         self.assertEqual(read_file(TEST_TL), read_file(TEST_DATA_PATH + 'rewritten.timeline'))
 
@@ -82,7 +116,7 @@ class NormalOperation(unittest.TestCase):
         copyfile(TEST_DATA_PATH + 'normal.timeline', TEST_TL)
         copyfile(TEST_DATA_PATH + 'modified.novx', TEST_NOVX)
         os.chdir(TEST_EXEC_PATH)
-        standalone.run(TEST_NOVX, silentMode=True)
+        convert(TEST_NOVX)
         self.assertEqual(read_file(TEST_TL), read_file(TEST_DATA_PATH + 'modified.timeline'))
         self.assertEqual(read_file(TEST_TL_BAK), read_file(TEST_DATA_PATH + 'normal.timeline'))
 
@@ -91,7 +125,7 @@ class NormalOperation(unittest.TestCase):
         copyfile(TEST_DATA_PATH + 'modified2.timeline', TEST_TL)
         copyfile(TEST_DATA_PATH + 'modified.novx', TEST_NOVX)
         os.chdir(TEST_EXEC_PATH)
-        standalone.run(TEST_TL, silentMode=True)
+        convert(TEST_TL)
         self.assertEqual(read_file(TEST_NOVX), read_file(TEST_DATA_PATH + 'modified2.novx'))
         self.assertEqual(read_file(TEST_YW_BAK), read_file(TEST_DATA_PATH + 'modified.novx'))
 
@@ -99,7 +133,7 @@ class NormalOperation(unittest.TestCase):
     def test_modified_yw_to_new_tl(self):
         copyfile(TEST_DATA_PATH + 'modified.novx', TEST_NOVX)
         os.chdir(TEST_EXEC_PATH)
-        standalone.run(TEST_NOVX, silentMode=True)
+        convert(TEST_NOVX)
         self.assertEqual(read_file(TEST_TL), read_file(TEST_DATA_PATH + 'new.timeline'))
 
     def tearDown(self):
