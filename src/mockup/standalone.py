@@ -12,9 +12,9 @@ import os
 from pathlib import Path
 
 from mvclib.view.set_icon_tk import set_icon
-from nvlib.configuration.configuration import Configuration
 from mvclib.view.ui import Ui
-from novxlib.ui.ui_tk import UiTk
+from mvclib.user_interface.ui_tk import UiTk
+from nvlib.configuration.configuration import Configuration
 from nvtimelinelib.nvtimeline_globals import _
 from nvtimelinelib.tl_converter import TlConverter
 
