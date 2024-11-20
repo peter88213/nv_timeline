@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### Version 5.0.0
+
+Library update:
+- Refactor the code for better maintainability.
+
+API: 5.0
+Based on novelibre 5.0.0
+
 ### Version 4.4.3
 
 - Change the message window title.

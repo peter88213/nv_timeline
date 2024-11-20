@@ -24,10 +24,10 @@ from tkinter import messagebox
 from tkinter import ttk
 import webbrowser
 
+from nvlib.controller.plugin.plugin_base import PluginBase
 from nvlib.model.file.doc_open import open_document
 from nvlib.novx_globals import Error
 from nvlib.novx_globals import norm_path
-from nvlib.plugin.plugin_base import PluginBase
 from nvtimelinelib.nvtimeline_globals import _
 from nvtimelinelib.tl_file import TlFile
 import tkinter as tk
