@@ -119,7 +119,7 @@ class TlFile(File):
                 scId = f'{SECTION_PREFIX}{sectionCount}'
                 event.find('labels').text = labels.replace(sectionMarker, scId)
                 self.novel.sections[scId] = SectionEvent(
-                    self._nvSvc.make_section(
+                    self._nvSvc.new_section(
                     status=1,
                     scType=0,
                     scene=0,
@@ -166,7 +166,7 @@ class TlFile(File):
         if isOutline:
             # Create a single chapter and assign all sections to it.
             chId = f'{CHAPTER_PREFIX}1'
-            self.novel.chapters[chId] = self._nvSvc.make_chapter(
+            self.novel.chapters[chId] = self._nvSvc.new_chapter(
                 chType=0,
                 title=f'{_("Chapter")} 1'
                 )
@@ -244,7 +244,7 @@ class TlFile(File):
 
         #--- Merge first.
         self.novel.chapters = {}
-        self.novel.tree = self._nvSvc.make_nv_tree()
+        self.novel.tree = self._nvSvc.new_nv_tree()
         # resetting the target structure, just keeping the sections
 
         if source.referenceDate:
@@ -256,7 +256,7 @@ class TlFile(File):
 
         defaultDay = 0
         for chId in source.tree.get_children(CH_ROOT):
-            self.novel.chapters[chId] = self._nvSvc.make_chapter()
+            self.novel.chapters[chId] = self._nvSvc.new_chapter()
             self.novel.tree.append(CH_ROOT, chId)
             for scId in source.tree.get_children(chId):
                 if ignoreUnspecific and source.sections[scId].date is None:
@@ -264,7 +264,7 @@ class TlFile(File):
                     continue
 
                 if not scId in self.novel.sections:
-                    self.novel.sections[scId] = SectionEvent(self._nvSvc.make_section())
+                    self.novel.sections[scId] = SectionEvent(self._nvSvc.new_section())
                 self.novel.tree.append(chId, scId)
                 if source.sections[scId].title:
                     title = source.sections[scId].title

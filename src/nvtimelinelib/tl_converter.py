@@ -37,7 +37,7 @@ class TlConverter(Converter):
         if fileExtension == TlFile.EXTENSION:
             # Source is a timeline
             sourceFile = TlFile(sourcePath, **kwargs)
-            targetFile = nvService.make_novx_file(f'{fileName}{nvService.get_novx_file_extension()}', **kwargs)
+            targetFile = nvService.new_novx_file(f'{fileName}{nvService.get_novx_file_extension()}', **kwargs)
             if os.path.isfile(f'{fileName}{nvService.get_novx_file_extension()}'):
                 # Update existing novelibre project from timeline
                 self.import_to_novx(sourceFile, targetFile)
@@ -46,7 +46,7 @@ class TlConverter(Converter):
                 self.create_novx(sourceFile, targetFile)
         elif fileExtension == nvService.get_novx_file_extension():
             # Update existing timeline from novelibre project
-            sourceFile = nvService.make_novx_file(sourcePath, **kwargs)
+            sourceFile = nvService.new_novx_file(sourcePath, **kwargs)
             targetFile = TlFile(f'{fileName}{TlFile.EXTENSION}', **kwargs)
             self.export_from_novx(sourceFile, targetFile)
         else:
@@ -77,8 +77,8 @@ class TlConverter(Converter):
         message = ''
         try:
             self.check(source, target)
-            source.novel = nvService.make_novel()
-            target.novel = nvService.make_novel()
+            source.novel = nvService.new_novel()
+            target.novel = nvService.new_novel()
             source.read()
             if os.path.isfile(target.filePath):
                 target.read()
