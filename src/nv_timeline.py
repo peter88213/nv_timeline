@@ -20,7 +20,6 @@ from datetime import datetime
 import os
 from pathlib import Path
 from tkinter import filedialog
-from tkinter import messagebox
 from tkinter import ttk
 import webbrowser
 
@@ -310,7 +309,7 @@ class Plugin(PluginBase):
                 message = _('Cannot determine file date.')
         else:
             message = _('No {} file available for this project.').format(self.FEATURE)
-        messagebox.showinfo(f'{self.FEATURE}', message)
+        self._ui.show_info(message, title=self.FEATURE)
 
     def _launch_application(self):
         """Launch Timeline with the current project."""
