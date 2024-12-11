@@ -10,8 +10,8 @@ from nvlib.model.converter.converter import Converter
 from nvlib.novx_globals import Error
 from nvlib.novx_globals import norm_path
 from nvlib.controller.services.nv_service import NvService
-from nvtimelinelib.nvtimeline_globals import _
-from nvtimelinelib.tl_file import TlFile
+from nvtimeline.nvtimeline_locale import _
+from nvtimeline.tl_file import TlFile
 
 
 class TlConverter(Converter):

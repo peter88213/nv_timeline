@@ -9,9 +9,9 @@ from shutil import copyfile
 import sys
 import unittest
 
+from mockup.tl_converter import TlConverter
 from mvclib.view.ui import Ui
 from nvlib.configuration.configuration import Configuration
-from nvtimelinelib.tl_converter import TlConverter
 
 # Test environment
 # The paths are relative to the "test" directory,

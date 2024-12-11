@@ -10,15 +10,14 @@ import os
 import re
 
 from nvlib.model.file.file import File
+from nvlib.model.xml.xml_indent import indent
 from nvlib.novx_globals import CHAPTER_PREFIX
 from nvlib.novx_globals import CH_ROOT
 from nvlib.novx_globals import Error
 from nvlib.novx_globals import SECTION_PREFIX
 from nvlib.novx_globals import norm_path
-from nvlib.model.xml.xml_indent import indent
-from nvtimelinelib.dt_helper import fix_iso_dt
-from nvtimelinelib.nvtimeline_globals import _
-from nvtimelinelib.section_event import SectionEvent
+from nvtimeline.nvtimeline_locale import _
+from nvtimeline.section_event import SectionEvent
 import xml.etree.ElementTree as ET
 
 
@@ -56,6 +55,27 @@ class TlFile(File):
             self._newEventSpacing = int(kwargs['new_event_spacing'])
         except:
             self._newEventSpacing = 0
+
+    def fix_iso_dt(self, tlDateTime):
+        """Return a date/time string with a four-number year.
+        
+        Positional arguments:
+            tlDateTime - date/time string as read in from Timeline.
+        
+        This is required for comparing date/time strings, 
+        and by the datetime.fromisoformat() method.
+        """
+        if tlDateTime.startswith('-'):
+            tlDateTime = tlDateTime.strip('-')
+            isBc = True
+        else:
+            isBc = False
+        dt = tlDateTime.split('-', 1)
+        dt[0] = dt[0].zfill(4)
+        tlDateTime = ('-').join(dt)
+        if isBc:
+            tlDateTime = f'-{tlDateTime}'
+        return tlDateTime
 
     def read(self):
         """Parse the file and get the instance variables.
@@ -145,8 +165,8 @@ class TlFile(File):
                 pass
 
             #--- Set date/time/duration.
-            startDateTime = fix_iso_dt(event.find('start').text)
-            endDateTime = fix_iso_dt(event.find('end').text)
+            startDateTime = self.fix_iso_dt(event.find('start').text)
+            endDateTime = self.fix_iso_dt(event.find('end').text)
 
             # Consider unspecific date/time in the target file.
             if isOutline:

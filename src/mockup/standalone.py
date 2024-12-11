@@ -11,12 +11,12 @@ import argparse
 import os
 from pathlib import Path
 
+from mockup.tl_converter import TlConverter
+from mvclib.user_interface.ui_tk import UiTk
 from mvclib.view.set_icon_tk import set_icon
 from mvclib.view.ui import Ui
-from mvclib.user_interface.ui_tk import UiTk
 from nvlib.configuration.configuration import Configuration
-from nvtimelinelib.nvtimeline_globals import _
-from nvtimelinelib.tl_converter import TlConverter
+from nvtimeline.nvtimeline_locale import _
 
 SUFFIX = ''
 APPNAME = 'nv_timeline'
