@@ -5,14 +5,14 @@
 ## Changelog
 
 
-### Version 5.0.2
+### Version 5.0.3
 
 Library update:
 - Refactor the code for better maintainability.
 - Fix a bug where project cannot be optionally locked on opening the timeline.
 
 API: 5.0
-Based on novelibre 5.0.24
+Based on novelibre 5.0.28
 
 ### Version 4.4.3
 
