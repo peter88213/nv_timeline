@@ -64,6 +64,7 @@ class TlService(ServiceBase):
         except Error as ex:
             message = f'!{str(ex)}'
         else:
+            self._ctrl.fileManager.copy_to_backup(target.filePath)
             message = f'{_("File written")}: "{norm_path(target.filePath)}".'
             self._ctrl.open_project(filePath=target.filePath, doNotSave=True)
         finally:
@@ -105,6 +106,7 @@ class TlService(ServiceBase):
             if os.path.isfile(target.filePath):
                 target.read()
             target.write(source.novel)
+            self._ctrl.fileManager.copy_to_backup(target.filePath)
             message = f'{_("File written")}: "{norm_path(target.filePath)}".'
         except Error as ex:
             message = f'!{str(ex)}'
@@ -139,6 +141,7 @@ class TlService(ServiceBase):
             source.read()
             target.novel = source.novel
             target.write()
+            self._ctrl.fileManager.copy_to_backup(target.filePath)
             message = f'{_("File written")}: "{norm_path(target.filePath)}".'
             self._ctrl.open_project(filePath=self._mdl.prjFile.filePath, doNotSave=True)
         except Error as ex:
@@ -177,7 +180,10 @@ class TlService(ServiceBase):
         if os.path.isfile(timelinePath):
             if prefs['lock_on_export']:
                 self._ctrl.lock()
-            open_document(timelinePath)
+            try:
+                open_document(timelinePath)
+            except Exception as ex:
+                self._ui.set_status(f'!{str(ex)}')
         else:
             self._ui.set_status(_('!No {} file available for this project.').format(self.windowTitle))
 

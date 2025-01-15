@@ -3,8 +3,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.0.3\n"
-"POT-Creation-Date: 2024-12-17 12:31:52\n"
+"Project-Id-Version: 5.1.0\n"
+"POT-Creation-Date: 2025-01-15 13:54:21\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -15,6 +15,18 @@ msgstr ""
 
 
 msgid "!No {} file available for this project."
+msgstr ""
+
+msgid "Alt-Down"
+msgstr ""
+
+msgid "Alt-Left"
+msgstr ""
+
+msgid "Alt-Right"
+msgstr ""
+
+msgid "Alt-Up"
 msgstr ""
 
 msgid "Can not process file"
@@ -38,6 +50,12 @@ msgstr ""
 msgid "Create or update the timeline"
 msgstr ""
 
+msgid "Ctrl"
+msgstr ""
+
+msgid "Del"
+msgstr ""
+
 msgid "File"
 msgstr ""
 
@@ -50,6 +68,12 @@ msgstr ""
 msgid "Information"
 msgstr ""
 
+msgid "Major Character"
+msgstr ""
+
+msgid "Minor Character"
+msgstr ""
+
 msgid "No {} file available for this project."
 msgstr ""
 
@@ -60,6 +84,9 @@ msgid "Save the project and update it?"
 msgstr ""
 
 msgid "Save the project and {} the timeline?"
+msgstr ""
+
+msgid "Shift"
 msgstr ""
 
 msgid "Timeline plugin Online help"

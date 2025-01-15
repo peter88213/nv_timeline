@@ -29,7 +29,7 @@ from nvtimeline.tl_service import TlService
 class Plugin(PluginBase):
     """Plugin class for synchronization with Timeline."""
     VERSION = '@release'
-    API_VERSION = '5.0'
+    API_VERSION = '5.9'
     DESCRIPTION = 'Synchronize with Timeline'
     URL = 'https://github.com/peter88213/nv_timeline'
     HELP_URL = f'{_("https://peter88213.github.io/nvhelp-en")}/nv_timeline/'

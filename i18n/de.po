@@ -1,11 +1,11 @@
 # nv_timeline Dictionary (English-German)
-# Copyright (C) 2022 Peter Triesberger
+# Copyright (C) 2025 Peter Triesberger
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.0.3\n"
-"POT-Creation-Date: 2024-12-17 12:31:52\n"
-"PO-Revision-Date: 2024-12-17 12:31:52\n"
+"Project-Id-Version: 5.1.0\n"
+"POT-Creation-Date: 2025-01-15 13:54:21\n"
+"PO-Revision-Date: 2025-01-15 13:54:21\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -15,6 +15,18 @@ msgstr ""
 
 msgid "!No {} file available for this project."
 msgstr "!Keine {}-Datei für dieses Projekt vorhanden."
+
+msgid "Alt-Down"
+msgstr "Alt-Ab"
+
+msgid "Alt-Left"
+msgstr "Alt-Links"
+
+msgid "Alt-Right"
+msgstr "Alt-Rechts"
+
+msgid "Alt-Up"
+msgstr "Alt-Auf"
 
 msgid "Can not process file"
 msgstr "Kann Datei nicht verarbeiten"
@@ -37,6 +49,12 @@ msgstr "Aus Timeline erzeugen..."
 msgid "Create or update the timeline"
 msgstr "Den Zeitstrahl erzeugen oder aktualisieren"
 
+msgid "Ctrl"
+msgstr "Strg"
+
+msgid "Del"
+msgstr "Entf"
+
 msgid "File"
 msgstr "Datei"
 
@@ -49,6 +67,12 @@ msgstr "Datei gespeichert"
 msgid "Information"
 msgstr "Information"
 
+msgid "Major Character"
+msgstr "Hauptfigur"
+
+msgid "Minor Character"
+msgstr "Nebenfigur"
+
 msgid "No {} file available for this project."
 msgstr "Keine {}-Datei für dieses Projekt vorhanden."
 
@@ -60,6 +84,9 @@ msgstr "Projekt speichern und aktualisieren?"
 
 msgid "Save the project and {} the timeline?"
 msgstr "Projekt sichern und den Zeitstrahl {}?"
+
+msgid "Shift"
+msgstr "Umschalt"
 
 msgid "Timeline plugin Online help"
 msgstr "Timeline-Plugin Online-Hilfe"
