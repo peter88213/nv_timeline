@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Synchronize yWriter project with Timeline
+"""Synchronize novelibre project with Timeline
 
 Version @release
 Requires Python 3.6+
@@ -11,12 +11,12 @@ import argparse
 import os
 from pathlib import Path
 
-from mockup.tl_converter import TlConverter
 from nvlib.configuration.configuration import Configuration
 from nvlib.gui.set_icon_tk import set_icon
-from nvlib.gui.user_interface.ui import Ui
-from nvlib.gui.user_interface.ui_tk import UiTk
+from nvlib.user_interface.ui import Ui
+from nvlib.user_interface.ui_tk import UiTk
 from nvtimeline.nvtimeline_locale import _
+from standalone.tl_converter import TlConverter
 
 SUFFIX = ''
 APPNAME = 'nv_timeline'
@@ -57,11 +57,11 @@ def run(sourcePath, silentMode=True, installDir='.'):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description='Synchronize yWriter with Timeline',
+        description='Synchronize novelibre with Timeline',
         epilog='')
     parser.add_argument('sourcePath',
                         metavar='Sourcefile',
-                        help='The path of the yWriter/Timeline project file.')
+                        help='The path of the novelibre/Timeline project file.')
     parser.add_argument('--silent',
                         action="store_true",
                         help='suppress error messages and the request to confirm overwriting')

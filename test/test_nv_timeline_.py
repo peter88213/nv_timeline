@@ -11,7 +11,7 @@ import unittest
 
 from mockup.tl_converter import TlConverter
 from nvlib.configuration.configuration import Configuration
-from nvlib.gui.ui import Ui
+from nvlib.user_interface.ui import Ui
 
 # Test environment
 # The paths are relative to the "test" directory,

@@ -20,8 +20,8 @@ from pathlib import Path
 from tkinter import ttk
 import webbrowser
 
-from nvlib.controller.plugin.plugin_base import PluginBase
 from nvtimeline.nvtimeline_locale import _
+from nvlib.controller.plugin.plugin_base import PluginBase
 import tkinter as tk
 from nvtimeline.tl_service import TlService
 
