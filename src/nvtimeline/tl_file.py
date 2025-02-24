@@ -85,16 +85,12 @@ class TlFile(File):
         """
 
         def remove_contId(event, text):
-            """Separate container ID from event title.
-            
-            Positional arguments:
-                event -- SectionEvent to update.
-                text: str -- event title.         
-            
-            If text comes with a Container ID, remove it 
-            and store it in the event.contId instance variable.
-            Return the stripped string.
-            """
+            # Separate container ID from event title.
+            #    event -- SectionEvent to update.
+            #    text: str -- event title.
+            # If text comes with a Container ID, remove it
+            # and store it in the event.contId instance variable.
+            # Return the stripped string.
             if text:
                 match = re.match(r'([\(\[][0-9]+[\)\]])', text)
                 if match:
@@ -210,18 +206,15 @@ class TlFile(File):
         """
 
         def add_contId(event, text):
-            """If event has a container ID, add it to text."""
+            # If event has a container ID, add it to text.
             if event.contId is not None:
                 return f'{event.contId}{text}'
             return text
 
         def set_view_range(dtMin, dtMax):
-            """Return maximum/minimum timestamp defining the view range in Timeline.
-            
-            Positional arguments:
-                dtMin: str -- lower date/time limit.
-                dtMax: str -- upper date/time limit.
-            """
+            # Return maximum/minimum timestamp defining the view range in Timeline.
+            #    dtMin: str -- lower date/time limit.
+            #    dtMax: str -- upper date/time limit.
             if dtMin is None:
                 dtMin = SectionEvent.defaultDateTime
             if dtMax is None:

@@ -9,7 +9,7 @@ from shutil import copyfile
 import sys
 import unittest
 
-from mockup.tl_converter import TlConverter
+from standalone.tl_converter import TlConverter
 from nvlib.configuration.configuration import Configuration
 from nvlib.user_interface.ui import Ui
 
