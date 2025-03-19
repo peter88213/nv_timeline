@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### Version 5.2.0
+
+- Updated the messaging.
+
+API: 5.17
+Based on novelibre 5.17.0
+
+
 ### Version 5.1.0
 
 - Making backup copies when saving timeline or novx files.
