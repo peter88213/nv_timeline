@@ -88,11 +88,17 @@ class TlService(ServiceBase):
         else:
             action = _('create')
         if self._mdl.isModified:
-            if not self._ui.ask_yes_no(_('Save the project and {} the timeline?').format(action)):
+            if not self._ui.ask_yes_no(
+                _('Save the project and {} the timeline?').format(action),
+                title=self.windowTitle
+                ):
                 return
 
             self._ctrl.save_project()
-        elif action == _('update') and not self._ui.ask_yes_no(_('Update the timeline?')):
+        elif action == _('update') and not self._ui.ask_yes_no(
+            _('Update the timeline?'),
+            title=self.windowTitle
+            ):
             return
 
         kwargs = self._get_configuration(self._mdl.prjFile.filePath)
@@ -118,14 +124,15 @@ class TlService(ServiceBase):
         if not self._mdl.prjFile:
             return
 
-        self._ui.restore_status()
-        self._ui.propertiesView.apply_changes()
         timelinePath = f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}{TlFile.EXTENSION}'
         if not os.path.isfile(timelinePath):
             self._ui.set_status(_('!No {} file available for this project.').format(self.windowTitle))
             return
 
-        if self._mdl.isModified and not self._ui.ask_yes_no(_('Save the project and update it?')):
+        if not self._ui.ask_yes_no(
+            _('Save the project and update it?'),
+            title=self.windowTitle
+            ):
             return
 
         self._ctrl.save_project()
