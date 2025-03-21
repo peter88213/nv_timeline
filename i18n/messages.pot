@@ -3,8 +3,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.2.1\n"
-"POT-Creation-Date: 2025-03-19 22:59:09\n"
+"Project-Id-Version: 5.2.2\n"
+"POT-Creation-Date: 2025-03-21 18:36:49\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -87,6 +87,9 @@ msgid "Save the project and {} the timeline?"
 msgstr ""
 
 msgid "Shift"
+msgstr ""
+
+msgid "There are unsaved changes"
 msgstr ""
 
 msgid "Timeline plugin Online help"
