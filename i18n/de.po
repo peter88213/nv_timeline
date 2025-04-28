@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.2.3\n"
-"POT-Creation-Date: 2025-03-30 15:46:11\n"
-"PO-Revision-Date: 2025-03-30 15:46:11\n"
+"Project-Id-Version: 5.2.4\n"
+"POT-Creation-Date: 2025-04-28 11:44:54\n"
+"PO-Revision-Date: 2025-04-28 11:44:54\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -103,8 +103,8 @@ msgstr "Den Zeitstrahl aktualisieren?"
 msgid "create"
 msgstr "erzeugen"
 
-msgid "https://peter88213.github.io/nvhelp-en"
-msgstr "https://peter88213.github.io/nvhelp-de"
+msgid "https://peter88213.github.io/nv_timeline/help/"
+msgstr "https://peter88213.github.io/nv_timeline/help_de/"
 
 msgid "newer"
 msgstr "neuer"

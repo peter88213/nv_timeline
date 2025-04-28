@@ -32,7 +32,7 @@ class Plugin(PluginBase):
     API_VERSION = '5.18'
     DESCRIPTION = 'Synchronize with Timeline'
     URL = 'https://github.com/peter88213/nv_timeline'
-    HELP_URL = f'{_("https://peter88213.github.io/nvhelp-en")}/nv_timeline/'
+    HELP_URL = _('https://peter88213.github.io/nv_timeline/help/')
 
     FEATURE = 'Timeline'
 
