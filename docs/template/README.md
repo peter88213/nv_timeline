@@ -1,7 +1,7 @@
 [![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v0.99.0.pyzw)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
 [![News/Feedback](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions)
-[![Online help](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/nv_timeline/)
+[![Online help](docs/img/help-button.png)](https://peter88213.github.io/nv_timeline/help/)
 
 
 # ![T](icons/tLogo32.png) nv_timeline
@@ -63,7 +63,7 @@ The package is also available in zip format: [nv_timeline_v0.99.0.zip](https://g
 
 ## Usage and conventions
 
-See the [online manual](https://peter88213.github.io/nvhelp-en/nv_timeline/)
+See the [online manual](https://peter88213.github.io/nv_timeline/help/)
 
 ## Credits
 

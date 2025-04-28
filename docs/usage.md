@@ -19,7 +19,7 @@ The plugin adds a **Timeline** entry to the *novelibre* main menu, a **Create fr
 
 # Operation
 
-See the [online help](https://peter88213.github.io/nvhelp-en/nv_timeline/).
+See the [online help](https://peter88213.github.io/nv_timeline/help/).
 
 ---
 
