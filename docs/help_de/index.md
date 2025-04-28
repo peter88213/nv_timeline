@@ -1,4 +1,4 @@
-[Projekt-Homepage](https://github.com/peter88213/nv_timeline) > [Index](../) > Help
+[Projekt-Homepage](https://github.com/peter88213/nv_timeline) > [Index](../) > Benutzerhandbuch
 
 ![external-link](../img/external-link.png)[English](../help/)
 
