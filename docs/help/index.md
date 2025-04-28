@@ -4,7 +4,7 @@
 
 ------------------------------------------------------------------------
 
-# nv_timeline User guide
+# User guide
 
 This page refers to the latest
 [nv_timeline](https://github.com/peter88213/nv_timeline/) release. You

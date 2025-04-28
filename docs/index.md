@@ -2,7 +2,7 @@
 
 ---
 
-# nv_timeline
+# Index
 
 A Timeline converter plugin for [novelibre](https://github.com/peter88213/novelibre/).
 
