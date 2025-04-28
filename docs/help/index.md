@@ -225,3 +225,7 @@ the target file.
     may differ.
 -   If a section event ends after 9999-12-31 in the timeline, the
     section duration is not synchronized with *novelibre*.
+
+---
+
+Copyright (c) 2025 by Peter Triesberger. All rights reserved.

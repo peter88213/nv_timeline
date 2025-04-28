@@ -240,3 +240,7 @@ gewünschte Ziel handelt.
     sein.
 -   Falls ein Ereignis auf dem Zeitstrahl nach 9999-12-31 endet, wird
     die Dauer nicht mit *novelibre* synchronisiert.
+
+---
+
+Copyright (c) 2025 by Peter Triesberger. All rights reserved.
