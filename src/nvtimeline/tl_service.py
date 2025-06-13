@@ -54,7 +54,9 @@ class TlService(ServiceBase):
         target = self._mdl.nvService.new_novx_file(novxPath)
 
         if os.path.isfile(target.filePath):
-            self._ui.set_status(f'!{_("File already exists")}: "{norm_path(target.filePath)}".')
+            self._ui.set_status(
+                f'!{_("File already exists")}: "{norm_path(target.filePath)}".'
+            )
             return
 
         statusMsg = ''
@@ -84,7 +86,10 @@ class TlService(ServiceBase):
             if not self._ctrl.save_project():
                 return
 
-        timelinePath = f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}{TlFile.EXTENSION}'
+        timelinePath = (
+            f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}'
+            f'{TlFile.EXTENSION}'
+        )
         if os.path.isfile(timelinePath):
             action = _('update')
         else:
@@ -127,9 +132,14 @@ class TlService(ServiceBase):
         if not self._mdl.prjFile:
             return
 
-        timelinePath = f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}{TlFile.EXTENSION}'
+        timelinePath = (
+            f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}'
+            f'{TlFile.EXTENSION}'
+        )
         if not os.path.isfile(timelinePath):
-            self._ui.set_status(_('!No {} file available for this project.').format(self.windowTitle))
+            self._ui.set_status(
+                _('!No {} file available for this project.').format(
+                    self.windowTitle))
             return
 
         if not self._ui.ask_yes_no(
@@ -142,7 +152,10 @@ class TlService(ServiceBase):
         kwargs = self._get_configuration(timelinePath)
         kwargs['nv_service'] = self._mdl.nvService
         source = TlFile(timelinePath, **kwargs)
-        target = self._mdl.nvService.new_novx_file(self._mdl.prjFile.filePath, **kwargs)
+        target = self._mdl.nvService.new_novx_file(
+            self._mdl.prjFile.filePath,
+            **kwargs
+        )
         message = ''
         try:
             target.novel = self._mdl.nvService.new_novel()
@@ -153,7 +166,10 @@ class TlService(ServiceBase):
             target.write()
             self._ctrl.fileManager.copy_to_backup(target.filePath)
             message = f'{_("File written")}: "{norm_path(target.filePath)}".'
-            self._ctrl.open_project(filePath=self._mdl.prjFile.filePath, doNotSave=True)
+            self._ctrl.open_project(
+                filePath=self._mdl.prjFile.filePath,
+                doNotSave=True,
+            )
         except Error as ex:
             message = f'!{str(ex)}'
         self._ui.set_status(f'{message}')
@@ -163,7 +179,10 @@ class TlService(ServiceBase):
         if not self._mdl.prjFile:
             return
 
-        timelinePath = f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}{TlFile.EXTENSION}'
+        timelinePath = (
+            f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}'
+            f'{TlFile.EXTENSION}'
+        )
         if os.path.isfile(timelinePath):
             try:
                 timestamp = os.path.getmtime(timelinePath)
@@ -172,7 +191,8 @@ class TlService(ServiceBase):
                 else:
                     cmp = _('older')
                 fileDate = datetime.fromtimestamp(timestamp).strftime('%c')
-                tlInfo = _('{0} file is {1} than the novelibre project.\n (last saved on {2})').format(self.windowTitle, cmp, fileDate)
+                tlInfo = _('{0} file is {1} than the novelibre project.\n (last saved on {2})').format(
+                    self.windowTitle, cmp, fileDate)
             except:
                 tlInfo = _('Cannot determine file date.')
         else:
@@ -189,7 +209,10 @@ class TlService(ServiceBase):
         if not self._mdl.prjFile:
             return
 
-        timelinePath = f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}{TlFile.EXTENSION}'
+        timelinePath = (
+            f'{os.path.splitext(self._mdl.prjFile.filePath)[0]}'
+            f'{TlFile.EXTENSION}'
+        )
         prefs = self._get_configuration(timelinePath)
         if os.path.isfile(timelinePath):
             if prefs['lock_on_export']:
@@ -199,7 +222,9 @@ class TlService(ServiceBase):
             except Exception as ex:
                 self._ui.set_status(f'!{str(ex)}')
         else:
-            self._ui.set_status(_('!No {} file available for this project.').format(self.windowTitle))
+            self._ui.set_status(
+                _('!No {} file available for this project.').format(self.windowTitle)
+            )
 
     def _get_configuration(self, sourcePath):
         """Return a dictionary with persistent configuration data."""
@@ -211,7 +236,10 @@ class TlService(ServiceBase):
             pluginCnfDir = f'{homeDir}/{self.INI_FILEPATH}'
         except:
             pluginCnfDir = '.'
-        iniFiles = [f'{pluginCnfDir}/{self.INI_FILENAME}', f'{sourceDir}/{self.INI_FILENAME}']
+        iniFiles = [
+            f'{pluginCnfDir}/{self.INI_FILENAME}',
+            f'{sourceDir}/{self.INI_FILENAME}',
+        ]
         configuration = self._mdl.nvService.new_configuration(
             settings=self.SETTINGS,
             options=self.OPTIONS

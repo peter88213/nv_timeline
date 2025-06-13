@@ -88,7 +88,8 @@ class SectionEvent:
         else:
             startYear = int(dt[0].split('-')[0])
         if startYear < MINYEAR:
-            # Substitute date/time, so novelibre would not prefix them with '19' or '20'.
+            # Substitute date/time,
+            # so novelibre would not prefix them with '19' or '20'.
             self.date = self.NULL_DATE
             self.time = self.NULL_TIME
             dtIsValid = False
@@ -109,7 +110,9 @@ class SectionEvent:
                 # Convert date to day
                 try:
                     sectionDate = date.fromisoformat(self.date)
-                    referenceDate = date.fromisoformat(self.defaultDateTime.split(' ')[0])
+                    referenceDate = date.fromisoformat(
+                        self.defaultDateTime.split(' ')[0]
+                    )
                     self.day = str((sectionDate - referenceDate).days)
                 except:
                     # Do not synchronize.
@@ -123,7 +126,8 @@ class SectionEvent:
             source -- Section instance with date/time to merge.
         
         Optional arguments:
-            defaultDay -- The day to be set if the section does not have a date or a day.
+            defaultDay -- The day to be set if the section does not
+                          have a date or a day.
         """
         #--- Set start date/time.
         if source.date is not None and source.date != self.NULL_DATE:
@@ -145,7 +149,9 @@ class SectionEvent:
                 startTime = '00:00:00'
             sectionDelta = timedelta(days=dayInt)
             defaultDate = self.defaultDateTime.split(' ')[0]
-            startDate = (date.fromisoformat(defaultDate) + sectionDelta).isoformat()
+            startDate = (
+                date.fromisoformat(defaultDate) + sectionDelta
+            ).isoformat()
             self._startDateTime = f'{startDate} {startTime}'
         elif self._startDateTime is None:
             self._startDateTime = self.defaultDateTime
@@ -170,7 +176,8 @@ class SectionEvent:
                 lastsSeconds = 0
             if source.lastsMinutes:
                 lastsSeconds += int(source.lastsMinutes) * 60
-            sectionDuration = timedelta(days=lastsDays, seconds=lastsSeconds)
+            sectionDuration = timedelta(
+                days=lastsDays, seconds=lastsSeconds)
             sectionStart = datetime.fromisoformat(self._startDateTime)
             sectionEnd = sectionStart + sectionDuration
             self._endDateTime = sectionEnd.isoformat(' ')

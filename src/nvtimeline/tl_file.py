@@ -36,12 +36,15 @@ class TlFile(File):
         """Initialize instance variables and SectionEvent class variables.
 
         Positional arguments:
-            filePath: str -- path to the file represented by the Novel instance.
+            filePath: str -- path to the file represented by the Novel 
+                             instance.
             
         Required keyword arguments:
             section_label: str -- event label marking "section" events.
-            section_color: str -- color for events imported as sections from novelibre.
-            new_event_spacing: str -- Days between events with automatically generated dates.  
+            section_color: str -- color for events imported as sections 
+                                  from novelibre.
+            new_event_spacing: str -- Days between events
+                                      with automatically generated dates.  
         
         Extends the superclass constructor.
         """
@@ -103,7 +106,8 @@ class TlFile(File):
         if self.novel.referenceDate:
             SectionEvent.defaultDateTime = f'{self.novel.referenceDate} 00:00:00'
         else:
-            SectionEvent.defaultDateTime = datetime.today().isoformat(' ', 'seconds')
+            SectionEvent.defaultDateTime = datetime.today().isoformat(
+                ' ', 'seconds')
 
         if not self.novel.sections:
             isOutline = True
@@ -113,7 +117,8 @@ class TlFile(File):
         try:
             self._xmlTree = ET.parse(self.filePath)
         except:
-            raise Error(f'{_("Can not process file")}: "{norm_path(self.filePath)}".')
+            raise Error(
+                f'{_("Can not process file")}: "{norm_path(self.filePath)}".')
         root = self._xmlTree.getroot()
         sectionCount = 0
         scIdsByDate = {}
@@ -144,7 +149,8 @@ class TlFile(File):
             else:
                 try:
                     scId = sectionMatch.group()
-                    self.novel.sections[scId] = SectionEvent(self.novel.sections[scId])
+                    self.novel.sections[scId] = SectionEvent(
+                        self.novel.sections[scId])
                 except:
                     continue
 
@@ -172,7 +178,11 @@ class TlFile(File):
                     isUnspecific = True
                 else:
                     isUnspecific = False
-            self.novel.sections[scId].set_date_time(startDateTime, endDateTime, isUnspecific)
+            self.novel.sections[scId].set_date_time(
+                startDateTime,
+                endDateTime,
+                isUnspecific,
+            )
             if not startDateTime in scIdsByDate:
                 scIdsByDate[startDateTime] = []
             scIdsByDate[startDateTime].append(scId)
@@ -193,10 +203,16 @@ class TlFile(File):
             # Rewrite the timeline with section IDs inserted.
             os.replace(self.filePath, f'{self.filePath}.bak')
             try:
-                self._xmlTree.write(self.filePath, xml_declaration=True, encoding='utf-8')
+                self._xmlTree.write(
+                    self.filePath,
+                    xml_declaration=True,
+                    encoding='utf-8',
+                )
             except:
                 os.replace(f'{self.filePath}.bak', self.filePath)
-                raise Error(f'{_("Cannot write file")}: "{norm_path(self.filePath)}".')
+                raise Error(
+                    f'{_("Cannot write file")}: "{norm_path(self.filePath)}".'
+                )
 
     def write(self, source):
         """Write instance variables to the file.
@@ -212,7 +228,8 @@ class TlFile(File):
             return text
 
         def set_view_range(dtMin, dtMax):
-            # Return maximum/minimum timestamp defining the view range in Timeline.
+            # Return maximum/minimum timestamp defining the view range
+            # in Timeline.
             #    dtMin: str -- lower date/time limit.
             #    dtMax: str -- upper date/time limit.
             if dtMin is None:
@@ -220,7 +237,8 @@ class TlFile(File):
             if dtMax is None:
                 dtMax = dtMin
             TIME_LIMIT = '0100-01-01 00:00:00'
-            # This is used to create a time interval outsides the processible time range.
+            # This is used to create a time interval outsides the processible
+            # time range.
             SEC_PER_DAY = 24 * 3600
             dt = dtMin.split(' ')
             if dt[0].startswith('-'):
@@ -264,7 +282,8 @@ class TlFile(File):
             SectionEvent.defaultDateTime = f'{source.referenceDate} 00:00:00'
             ignoreUnspecific = False
         else:
-            SectionEvent.defaultDateTime = datetime.today().isoformat(' ', 'seconds')
+            SectionEvent.defaultDateTime = datetime.today().isoformat(
+                ' ', 'seconds')
             ignoreUnspecific = True
 
         defaultDay = 0
@@ -277,7 +296,9 @@ class TlFile(File):
                     continue
 
                 if not scId in self.novel.sections:
-                    self.novel.sections[scId] = SectionEvent(self._nvSvc.new_section())
+                    self.novel.sections[scId] = SectionEvent(
+                        self._nvSvc.new_section()
+                    )
                 self.novel.tree.append(chId, scId)
                 if source.sections[scId].title:
                     title = source.sections[scId].title
@@ -286,7 +307,10 @@ class TlFile(File):
                     self.novel.sections[scId].title = title
                 self.novel.sections[scId].desc = source.sections[scId].desc
                 defaultDay += self._newEventSpacing
-                self.novel.sections[scId].merge_date_time(source.sections[scId], defaultDay=defaultDay)
+                self.novel.sections[scId].merge_date_time(
+                    source.sections[scId],
+                    defaultDay=defaultDay,
+                )
                 self.novel.sections[scId].scType = source.sections[scId].scType
         sections = list(self.novel.sections)
         for scId in sections:
@@ -315,7 +339,10 @@ class TlFile(File):
             for event in events.iter('event'):
                 if event.find('labels') is not None:
                     labels = event.find('labels').text
-                    sectionMatch = re.search(fr'{SECTION_PREFIX}[0-9]+', labels)
+                    sectionMatch = re.search(
+                        fr'{SECTION_PREFIX}[0-9]+',
+                        labels
+                    )
                 else:
                     continue
 
@@ -323,7 +350,12 @@ class TlFile(File):
                     scId = sectionMatch.group()
                     if scId in srtSections:
                         scIds.append(scId)
-                        dtMin, dtMax = self.novel.sections[scId].build_branch(event, scId, dtMin, dtMax)
+                        dtMin, dtMax = self.novel.sections[scId].build_branch(
+                            event,
+                            scId,
+                            dtMin,
+                            dtMax,
+                        )
                     else:
                         trash.append(event)
 
@@ -331,7 +363,12 @@ class TlFile(File):
             for scId in srtSections:
                 if not scId in scIds:
                     event = ET.SubElement(events, 'event')
-                    dtMin, dtMax = self.novel.sections[scId].build_branch(event, scId, dtMin, dtMax)
+                    dtMin, dtMax = self.novel.sections[scId].build_branch(
+                        event,
+                        scId,
+                        dtMin,
+                        dtMax,
+                    )
             # Remove events that are assigned to missing sections.
             for event in trash:
                 events.remove(event)
@@ -351,7 +388,12 @@ class TlFile(File):
             events = ET.SubElement(root, 'events')
             for scId in srtSections:
                 event = ET.SubElement(events, 'event')
-                dtMin, dtMax = self.novel.sections[scId].build_branch(event, scId, dtMin, dtMax)
+                dtMin, dtMax = self.novel.sections[scId].build_branch(
+                    event,
+                    scId,
+                    dtMin,
+                    dtMax,
+                )
 
             # Set the view range.
             dtMin, dtMax = set_view_range(dtMin, dtMax)
@@ -368,15 +410,23 @@ class TlFile(File):
             try:
                 os.replace(self.filePath, f'{self.filePath}.bak')
             except:
-                raise Error(f'{_("Cannot overwrite file")}: "{norm_path(self.filePath)}".')
+                raise Error(
+                    f'{_("Cannot overwrite file")}: "{norm_path(self.filePath)}".'
+                )
             else:
                 backedUp = True
         try:
-            self._xmlTree.write(self.filePath, xml_declaration=True, encoding='utf-8')
+            self._xmlTree.write(
+                self.filePath,
+                xml_declaration=True,
+                encoding='utf-8',
+            )
         except:
             if backedUp:
                 os.replace(f'{self.filePath}.bak', self.filePath)
-            raise Error(f'{_("Cannot write file")}: "{norm_path(self.filePath)}".')
+            raise Error(
+                f'{_("Cannot write file")}: "{norm_path(self.filePath)}".'
+            )
 
     def _convert_to_novx(self, text):
         """Unmask brackets in novx section titles.

@@ -68,9 +68,9 @@ class Plugin(PluginBase):
         """Add a submenu to the main menu.
         
         Positional arguments:
-            model -- reference to the main model instance of the application.
-            view -- reference to the main view instance of the application.
-            controller -- reference to the main controller instance of the application.
+            model -- reference to the novelibre main model instance.
+            view -- reference to the novelibre main view instance.
+            controller -- reference to the novelibre main controller instance.
 
         Extends the superclass method.
         """
@@ -78,25 +78,54 @@ class Plugin(PluginBase):
 
         # Create a submenu in the Tools menu.
         self.pluginMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
-        self._ui.toolsMenu.add_cascade(label=self.FEATURE, menu=self.pluginMenu)
-        self._ui.toolsMenu.entryconfig(self.FEATURE, state='disabled')
-        self.pluginMenu.add_command(label=_('Information'), command=self.info)
+        self._ui.toolsMenu.add_cascade(
+            label=self.FEATURE,
+            menu=self.pluginMenu,
+        )
+        self._ui.toolsMenu.entryconfig(
+            self.FEATURE,
+            state='disabled',
+        )
+        self.pluginMenu.add_command(
+            label=_('Information'),
+            command=self.info,
+        )
         self.pluginMenu.add_separator()
-        self.pluginMenu.add_command(label=_('Create or update the timeline'), command=self.export_from_novx)
-        self.pluginMenu.add_command(label=_('Update the project'), command=self.import_to_novx)
+        self.pluginMenu.add_command(
+            label=_('Create or update the timeline'),
+            command=self.export_from_novx,
+        )
+        self.pluginMenu.add_command(
+            label=_('Update the project'),
+            command=self.import_to_novx,
+        )
         self.pluginMenu.add_separator()
-        self.pluginMenu.add_command(label=_('Open Timeline'), command=self.launch_application)
+        self.pluginMenu.add_command(
+            label=_('Open Timeline'),
+            command=self.launch_application,
+        )
 
         # Add an entry to the "File > New" menu.
-        self._ui.newMenu.add_command(label=_('Create from Timeline...'), command=self.create_novx)
+        self._ui.newMenu.add_command(
+            label=_('Create from Timeline...'),
+            command=self.create_novx,
+        )
 
         # Add an entry to the Help menu.
-        self._ui.helpMenu.add_command(label=_('Timeline plugin Online help'), command=self.open_help)
+        self._ui.helpMenu.add_command(
+            label=_('Timeline plugin Online help'),
+            command=self.open_help,
+        )
 
         #--- Configure the toolbar.
         self._configure_toolbar()
 
-        self.timelineService = TlService(model, view, controller, self.FEATURE)
+        self.timelineService = TlService(
+            model,
+            view,
+            controller,
+            self.FEATURE,
+        )
 
     def launch_application(self):
         self.timelineService.launch_application()
@@ -106,7 +135,10 @@ class Plugin(PluginBase):
         
         Overrides the superclass method.
         """
-        self.pluginMenu.entryconfig(_('Update the project'), state='disabled')
+        self.pluginMenu.entryconfig(
+            _('Update the project'),
+            state='disabled',
+        )
 
     def open_help(self):
         webbrowser.open(self.HELP_URL)
@@ -116,7 +148,10 @@ class Plugin(PluginBase):
         
         Overrides the superclass method.
         """
-        self.pluginMenu.entryconfig(_('Update the project'), state='normal')
+        self.pluginMenu.entryconfig(
+            _('Update the project'),
+            state='normal',
+        )
 
     def _configure_toolbar(self):
 
@@ -137,7 +172,11 @@ class Plugin(PluginBase):
             tlIcon = None
 
         # Put a Separator on the toolbar.
-        tk.Frame(self._ui.toolbar.buttonBar, bg='light gray', width=1).pack(side='left', fill='y', padx=4)
+        tk.Frame(
+            self._ui.toolbar.buttonBar,
+            bg='light gray',
+            width=1,
+        ).pack(side='left', fill='y', padx=4)
 
         # Put a button on the toolbar.
         self._timelineButton = ttk.Button(
@@ -145,7 +184,7 @@ class Plugin(PluginBase):
             text=_('Open Timeline'),
             image=tlIcon,
             command=self.launch_application
-            )
+        )
         self._timelineButton.pack(side='left')
         self._timelineButton.image = tlIcon
 
