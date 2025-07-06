@@ -75,11 +75,14 @@ class Plugin(PluginBase):
         Extends the superclass method.
         """
         super().install(model, view, controller)
+        self._icon = self._get_icon('tl.png')
 
         # Create a submenu in the Tools menu.
         self.pluginMenu = tk.Menu(self._ui.toolsMenu, tearoff=0)
         self._ui.toolsMenu.add_cascade(
             label=self.FEATURE,
+            image=self._icon,
+            compound='left',
             menu=self.pluginMenu,
         )
         self._ui.toolsMenu.entryconfig(
@@ -114,6 +117,8 @@ class Plugin(PluginBase):
         # Add an entry to the Help menu.
         self._ui.helpMenu.add_command(
             label=_('Timeline plugin Online help'),
+            image=self._icon,
+            compound='left',
             command=self.open_help,
         )
 
@@ -155,22 +160,6 @@ class Plugin(PluginBase):
 
     def _configure_toolbar(self):
 
-        # Get the icons.
-        prefs = self._ctrl.get_preferences()
-        if prefs.get('large_icons', False):
-            size = 24
-        else:
-            size = 16
-        try:
-            homeDir = str(Path.home()).replace('\\', '/')
-            iconPath = f'{homeDir}/.novx/icons/{size}'
-        except:
-            iconPath = None
-        try:
-            tlIcon = tk.PhotoImage(file=f'{iconPath}/tl.png')
-        except:
-            tlIcon = None
-
         # Put a Separator on the toolbar.
         tk.Frame(
             self._ui.toolbar.buttonBar,
@@ -182,14 +171,14 @@ class Plugin(PluginBase):
         self._timelineButton = ttk.Button(
             self._ui.toolbar.buttonBar,
             text=_('Open Timeline'),
-            image=tlIcon,
+            image=self._icon,
             command=self.launch_application
         )
         self._timelineButton.pack(side='left')
-        self._timelineButton.image = tlIcon
+        self._timelineButton.image = self._icon
 
         # Initialize tooltip.
-        if not prefs['enable_hovertips']:
+        if not self._ctrl.get_preferences()['enable_hovertips']:
             return
 
         try:
@@ -199,3 +188,16 @@ class Plugin(PluginBase):
 
         Hovertip(self._timelineButton, self._timelineButton['text'])
 
+    def _get_icon(self, fileName):
+        # Return the icon for the main view.
+        if self._ctrl.get_preferences().get('large_icons', False):
+            size = 24
+        else:
+            size = 16
+        try:
+            homeDir = str(Path.home()).replace('\\', '/')
+            iconPath = f'{homeDir}/.novx/icons/{size}'
+            icon = tk.PhotoImage(file=f'{iconPath}/{fileName}')
+        except:
+            icon = None
+        return icon

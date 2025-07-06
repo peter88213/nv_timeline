@@ -104,7 +104,9 @@ class TlFile(File):
 
         #--- Parse the Timeline file.
         if self.novel.referenceDate:
-            SectionEvent.defaultDateTime = f'{self.novel.referenceDate} 00:00:00'
+            SectionEvent.defaultDateTime = (
+                f'{self.novel.referenceDate} 00:00:00'
+            )
         else:
             SectionEvent.defaultDateTime = datetime.today().isoformat(
                 ' ', 'seconds')
@@ -118,7 +120,8 @@ class TlFile(File):
             self._xmlTree = ET.parse(self.filePath)
         except:
             raise Error(
-                f'{_("Can not process file")}: "{norm_path(self.filePath)}".')
+                f'{_("Can not process file")}: "{norm_path(self.filePath)}".'
+            )
         root = self._xmlTree.getroot()
         sectionCount = 0
         scIdsByDate = {}
@@ -382,7 +385,10 @@ class TlFile(File):
         else:
             #--- Create a new XML _xmlTree.
             root = ET.Element('timeline')
-            ET.SubElement(root, 'version').text = '2.4.0 (3f207fbb63f0 2021-04-07)'
+            ET.SubElement(
+                root,
+                'version'
+            ).text = '2.4.0 (3f207fbb63f0 2021-04-07)'
             ET.SubElement(root, 'timetype').text = 'gregoriantime'
             ET.SubElement(root, 'categories')
             events = ET.SubElement(root, 'events')
@@ -411,7 +417,10 @@ class TlFile(File):
                 os.replace(self.filePath, f'{self.filePath}.bak')
             except:
                 raise Error(
-                    f'{_("Cannot overwrite file")}: "{norm_path(self.filePath)}".'
+                    (
+                        f'{_("Cannot overwrite file")}: '
+                        f'"{norm_path(self.filePath)}".'
+                    )
                 )
             else:
                 backedUp = True

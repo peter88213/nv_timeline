@@ -4,13 +4,22 @@
 
 ## Changelog
 
+
+### Version 5.3.0
+
+- Added icon to menu entries.
+- Reformatted the code according to PEP-8.
+
+API: 5.18
+Based on novelibre 5.29.1
+
+
 ### Version 5.2.3
 
 - Fix a bug where the **File > New > Create from Timeline...** command cannot be properly aborted.
 
 API: 5.18
 Based on novelibre 5.18.0
-
 
 
 ### Version 5.2.2

@@ -30,15 +30,22 @@ class TlConverter(Converter):
         kwargs['nv_service'] = nvService
         self.newFile = None
         if not os.path.isfile(sourcePath):
-            self.ui.set_status(f'!{_("File not found")}: "{norm_path(sourcePath)}".')
+            self.ui.set_status(
+                f'!{_("File not found")}: "{norm_path(sourcePath)}".'
+            )
             return
 
         fileName, fileExtension = os.path.splitext(sourcePath)
         if fileExtension == TlFile.EXTENSION:
             # Source is a timeline
             sourceFile = TlFile(sourcePath, **kwargs)
-            targetFile = nvService.new_novx_file(f'{fileName}{nvService.get_novx_file_extension()}', **kwargs)
-            if os.path.isfile(f'{fileName}{nvService.get_novx_file_extension()}'):
+            targetFile = nvService.new_novx_file(
+                f'{fileName}{nvService.get_novx_file_extension()}',
+                **kwargs
+            )
+            if os.path.isfile(
+                f'{fileName}{nvService.get_novx_file_extension()}'
+            ):
                 # Update existing novelibre project from timeline
                 self._import_to_novx(sourceFile, targetFile)
             else:
@@ -51,7 +58,12 @@ class TlConverter(Converter):
             self._export_from_novx(sourceFile, targetFile)
         else:
             # Source file format is not supported
-            self.ui.set_status(f'!{_("File type is not supported")}: "{norm_path(sourcePath)}".')
+            self.ui.set_status(
+                (
+                    f'!{_("File type is not supported")}: '
+                    f'"{norm_path(sourcePath)}".'
+                )
+            )
 
     def _export_from_novx(self, source, target):
         """Convert from novelibre project to other file format.
@@ -73,7 +85,13 @@ class TlConverter(Converter):
         """
         nvService = NvService()
         self.ui.set_info(
-            _('Input: {0} "{1}"\nOutput: {2} "{3}"').format(source.DESCRIPTION, norm_path(source.filePath), target.DESCRIPTION, norm_path(target.filePath)))
+            _('Input: {0} "{1}"\nOutput: {2} "{3}"').format(
+                source.DESCRIPTION,
+                norm_path(source.filePath),
+                target.DESCRIPTION,
+                norm_path(target.filePath)
+            )
+        )
         statusMsg = ''
         try:
             self._check(source, target)

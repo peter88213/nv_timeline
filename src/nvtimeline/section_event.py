@@ -120,10 +120,11 @@ class SectionEvent:
                 self.date = None
 
     def merge_date_time(self, source, defaultDay=0):
-        """Set date/time related variables from a novelibre-generated source section.
-                
+        """Set date/time related section variables.
+        
         Positional arguments:
-            source -- Section instance with date/time to merge.
+            source -- Section instance with date/time to merge
+                      (novelibre-generated).
         
         Optional arguments:
             defaultDay -- The day to be set if the section does not

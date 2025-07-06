@@ -24,10 +24,10 @@ SETTINGS = dict(
     section_label='Section',
     section_color='170,240,160',
     new_event_spacing='1'
-    )
+)
 OPTIONS = dict(
     lock_on_export=False,
-    )
+)
 
 
 def run(sourcePath, silentMode=True, installDir='.'):
@@ -35,14 +35,17 @@ def run(sourcePath, silentMode=True, installDir='.'):
         ui = Ui('')
     else:
         ui = UiTk(f'{_("Synchronize Timeline and novelibre")} @release')
-        set_icon(ui.root, icon='tLogo32')
+        set_icon(ui.root, icon='tlview')
 
     #--- Try to get persistent configuration data
     sourceDir = os.path.dirname(sourcePath)
     if not sourceDir:
         sourceDir = '.'
     iniFileName = f'{APPNAME}.ini'
-    iniFiles = [f'{installDir}/{iniFileName}', f'{sourceDir}/{iniFileName}']
+    iniFiles = [
+        f'{installDir}/{iniFileName}',
+        f'{sourceDir}/{iniFileName}'
+    ]
     configuration = Configuration(SETTINGS, OPTIONS)
     for iniFile in iniFiles:
         configuration.read(iniFile)
@@ -59,12 +62,16 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         description='Synchronize novelibre with Timeline',
         epilog='')
-    parser.add_argument('sourcePath',
-                        metavar='Sourcefile',
-                        help='The path of the novelibre/Timeline project file.')
-    parser.add_argument('--silent',
-                        action="store_true",
-                        help='suppress error messages and the request to confirm overwriting')
+    parser.add_argument(
+        'sourcePath',
+        metavar='Sourcefile',
+        help='The path of the novelibre/Timeline project file.'
+    )
+    parser.add_argument(
+        '--silent',
+        action="store_true",
+        help='suppress error messages and the request to confirm overwriting'
+    )
     args = parser.parse_args()
     try:
         homeDir = str(Path.home()).replace('\\', '/')

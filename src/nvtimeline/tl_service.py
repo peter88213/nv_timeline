@@ -192,11 +192,16 @@ class TlService(ServiceBase):
                     cmp = _('older')
                 fileDate = datetime.fromtimestamp(timestamp).strftime('%c')
                 tlInfo = _('{0} file is {1} than the novelibre project.\n (last saved on {2})').format(
-                    self.windowTitle, cmp, fileDate)
+                    self.windowTitle,
+                    cmp,
+                    fileDate
+                )
             except:
                 tlInfo = _('Cannot determine file date.')
         else:
-            tlInfo = _('No {} file available for this project.').format(self.windowTitle)
+            tlInfo = _('No {} file available for this project.').format(
+                self.windowTitle
+            )
         self._ui.show_info(
             message=self.windowTitle,
             detail=tlInfo,
@@ -223,7 +228,9 @@ class TlService(ServiceBase):
                 self._ui.set_status(f'!{str(ex)}')
         else:
             self._ui.set_status(
-                _('!No {} file available for this project.').format(self.windowTitle)
+                _('!No {} file available for this project.').format(
+                    self.windowTitle
+                )
             )
 
     def _get_configuration(self, sourcePath):
