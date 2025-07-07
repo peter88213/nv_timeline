@@ -5,13 +5,13 @@
 ## Changelog
 
 
-### Version 5.3.0
+### Version 5.3.1
 
 - Added icon to menu entries.
 - Reformatted the code according to PEP-8.
 
 API: 5.18
-Based on novelibre 5.29.1
+Based on novelibre 5.29.2
 
 
 ### Version 5.2.3
