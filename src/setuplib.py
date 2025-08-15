@@ -6,31 +6,17 @@ Copyright (c) 2025 Peter Triesberger
 For further information see https://github.com/peter88213/nv_timeline
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 """
-from shutil import copytree
-from shutil import copy2
-from shutil import rmtree
-import zipfile
 import os
-import sys
 from pathlib import Path
-try:
-    from tkinter import *
-except ModuleNotFoundError:
-    input(
-        (
-            'The tkinter module is missing. '
-            'Please install the tk support package for your python3 version.'
-        )
-    )
-    sys.exit(1)
+from shutil import copy2
+from shutil import copytree
+from shutil import rmtree
+import sys
+import zipfile
 
 PLUGIN = 'nv_timeline.py'
 VERSION = ' @release'
 PRJ = 'nv_timeline'
-
-root = Tk()
-processInfo = Label(root, text='')
-message = []
 
 pyz = os.path.dirname(__file__)
 
@@ -51,11 +37,6 @@ def cp_tree(sourceDir, targetDir):
     copytree(sourceDir, f'{targetDir}/{sourceDir}', dirs_exist_ok=True)
 
 
-def output(text):
-    message.append(text)
-    processInfo.config(text=('\n').join(message))
-
-
 def main(zipped=True):
     if zipped:
         copy_file = extract_file
@@ -68,52 +49,39 @@ def main(zipped=True):
     scriptDir = os.path.dirname(scriptPath)
     os.chdir(scriptDir)
 
-    # Open a tk window.
-    root.title('Setup')
-    output(f'*** Installing {PLUGIN}{VERSION} ***\n')
-    header = Label(root, text='')
-    header.pack(padx=5, pady=5)
-
-    # Prepare the messaging area.
-    processInfo.pack(padx=5, pady=5)
-
-    # Install the plugin.
+    print(f'*** Installing {PLUGIN} {VERSION} ***')
     homePath = str(Path.home()).replace('\\', '/')
     applicationDir = f'{homePath}/.novx'
     if os.path.isdir(applicationDir):
         pluginDir = f'{applicationDir}/plugin'
         os.makedirs(pluginDir, exist_ok=True)
-        output(f'Copying "{PLUGIN}" ...')
+
+        # Install the plugin.
+        print(f'Copying "{PLUGIN}" ...')
         copy_file(PLUGIN, pluginDir)
 
         # Install the localization files.
         copy_tree('locale', applicationDir)
-        output(f'Copying "locale"')
+        print(f'Copying "locale"')
 
         # Install the icons.
-        output('Copying icons ...')
+        print('Copying icons ...')
         copy_tree('icons', applicationDir)
 
         # Provide the sample files.
-        output('Copying/replacing sample files ...')
+        print('Copying/replacing sample files ...')
         rmtree(f'{applicationDir}/{PRJ}_sample', ignore_errors=True)
         copy_tree(f'{PRJ}_sample', applicationDir)
 
         # Show a success message.
-        output(
-            (
-                f'Sucessfully installed "{PLUGIN}" '
-                f'at "{os.path.normpath(pluginDir)}".'
-            )
+        print(
+            f'Sucessfully installed "{PLUGIN}" '
+            f'at "{os.path.normpath(pluginDir)}".'
         )
     else:
-        output(
-            (
-                'ERROR: Cannot find a novelibre installation '
-                f'at "{os.path.normpath(applicationDir)}".'
-            )
+        print(
+            'ERROR: Cannot find a novelibre installation '
+            f'at "{os.path.normpath(applicationDir)}".'
         )
-    root.quitButton = Button(text="Quit", command=quit)
-    root.quitButton.config(height=1, width=30)
-    root.quitButton.pack(padx=5, pady=5)
-    root.mainloop()
+
+    input('Press any key to quit.')
