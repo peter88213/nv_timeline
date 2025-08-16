@@ -15,7 +15,7 @@ import sys
 import zipfile
 
 PLUGIN = 'nv_timeline.py'
-VERSION = ' @release'
+VERSION = '@release'
 PRJ = 'nv_timeline'
 
 pyz = os.path.dirname(__file__)
