@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 5.3.1\n"
-"POT-Creation-Date: 2025-07-07 11:42:35\n"
+"POT-Creation-Date: 2025-08-16 15:23:36\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -15,6 +15,12 @@ msgstr ""
 
 
 msgid "!No {} file available for this project."
+msgstr ""
+
+msgid "1st Edit"
+msgstr ""
+
+msgid "2nd Edit"
 msgstr ""
 
 msgid "Alt-Down"
@@ -56,6 +62,12 @@ msgstr ""
 msgid "Del"
 msgstr ""
 
+msgid "Done"
+msgstr ""
+
+msgid "Draft"
+msgstr ""
+
 msgid "File"
 msgstr ""
 
@@ -78,6 +90,9 @@ msgid "No {} file available for this project."
 msgstr ""
 
 msgid "Open Timeline"
+msgstr ""
+
+msgid "Outline"
 msgstr ""
 
 msgid "Save the project and update it?"
