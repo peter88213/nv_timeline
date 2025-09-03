@@ -29,7 +29,7 @@ from nvtimeline.tl_service import TlService
 class Plugin(PluginBase):
     """Plugin class for synchronization with Timeline."""
     VERSION = '@release'
-    API_VERSION = '5.18'
+    API_VERSION = '5.35'
     DESCRIPTION = 'Synchronize with Timeline'
     URL = 'https://github.com/peter88213/nv_timeline'
     HELP_URL = f'{_("https://peter88213.github.io/nvhelp-en")}/nv_timeline/'
@@ -183,12 +183,9 @@ class Plugin(PluginBase):
         if not self._ctrl.get_preferences()['enable_hovertips']:
             return
 
-        try:
-            from idlelib.tooltip import Hovertip
-        except ModuleNotFoundError:
-            return
-
-        Hovertip(self._timelineButton, self._timelineButton['text'])
+        self._mdl.nvService.new_hovertip(
+            self._timelineButton, self._timelineButton['text']
+        )
 
     def _get_icon(self, fileName):
         # Return the icon for the main view.

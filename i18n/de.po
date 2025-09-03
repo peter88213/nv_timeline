@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.3.1\n"
-"POT-Creation-Date: 2025-08-16 15:23:36\n"
-"PO-Revision-Date: 2025-08-16 15:23:36\n"
+"Project-Id-Version: 5.4.0\n"
+"POT-Creation-Date: 2025-09-03 09:56:29\n"
+"PO-Revision-Date: 2025-09-03 09:56:29\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -34,6 +34,9 @@ msgstr "Alt-Rechts"
 msgid "Alt-Up"
 msgstr "Alt-Auf"
 
+msgid "Bio"
+msgstr "Biographie"
+
 msgid "Can not process file"
 msgstr "Kann Datei nicht verarbeiten"
 
@@ -48,6 +51,9 @@ msgstr "Kann Datei nicht schreiben"
 
 msgid "Chapter"
 msgstr "Kapitel"
+
+msgid "Characterization"
+msgstr "Charakterisierung"
 
 msgid "Create from Timeline..."
 msgstr "Aus Timeline erzeugen..."
@@ -67,6 +73,9 @@ msgstr "Fertiggestellt"
 msgid "Draft"
 msgstr "Entwurf"
 
+msgid "Ending"
+msgstr "Ende"
+
 msgid "File"
 msgstr "Datei"
 
@@ -75,6 +84,9 @@ msgstr "Datei existiert bereits"
 
 msgid "File written"
 msgstr "Datei gespeichert"
+
+msgid "Goals"
+msgstr "Ziele"
 
 msgid "Information"
 msgstr "Information"
@@ -91,8 +103,17 @@ msgstr "Keine {}-Datei für dieses Projekt vorhanden."
 msgid "Open Timeline"
 msgstr "Timeline öffnen"
 
+msgid "Opening"
+msgstr "Eröffnung"
+
 msgid "Outline"
 msgstr "Gliederung"
+
+msgid "Peak emotional moment"
+msgstr "Emotionaler Höhepunkt"
+
+msgid "Plot progress"
+msgstr "Handlungsfortschritt"
 
 msgid "Save the project and update it?"
 msgstr "Projekt speichern und aktualisieren?"
@@ -114,6 +135,9 @@ msgstr "Das Projekt aktualisieren"
 
 msgid "Update the timeline?"
 msgstr "Den Zeitstrahl aktualisieren?"
+
+msgid "World building"
+msgstr "Weltenbau"
 
 msgid "create"
 msgstr "erzeugen"

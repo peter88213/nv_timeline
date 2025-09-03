@@ -3,8 +3,8 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.3.1\n"
-"POT-Creation-Date: 2025-08-16 15:23:36\n"
+"Project-Id-Version: 5.4.0\n"
+"POT-Creation-Date: 2025-09-03 09:56:29\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: LANGUAGE\n"
@@ -35,6 +35,9 @@ msgstr ""
 msgid "Alt-Up"
 msgstr ""
 
+msgid "Bio"
+msgstr ""
+
 msgid "Can not process file"
 msgstr ""
 
@@ -48,6 +51,9 @@ msgid "Cannot write file"
 msgstr ""
 
 msgid "Chapter"
+msgstr ""
+
+msgid "Characterization"
 msgstr ""
 
 msgid "Create from Timeline..."
@@ -68,6 +74,9 @@ msgstr ""
 msgid "Draft"
 msgstr ""
 
+msgid "Ending"
+msgstr ""
+
 msgid "File"
 msgstr ""
 
@@ -75,6 +84,9 @@ msgid "File already exists"
 msgstr ""
 
 msgid "File written"
+msgstr ""
+
+msgid "Goals"
 msgstr ""
 
 msgid "Information"
@@ -92,7 +104,16 @@ msgstr ""
 msgid "Open Timeline"
 msgstr ""
 
+msgid "Opening"
+msgstr ""
+
 msgid "Outline"
+msgstr ""
+
+msgid "Peak emotional moment"
+msgstr ""
+
+msgid "Plot progress"
 msgstr ""
 
 msgid "Save the project and update it?"
@@ -114,6 +135,9 @@ msgid "Update the project"
 msgstr ""
 
 msgid "Update the timeline?"
+msgstr ""
+
+msgid "World building"
 msgstr ""
 
 msgid "create"
