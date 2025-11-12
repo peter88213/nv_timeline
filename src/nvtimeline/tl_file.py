@@ -144,16 +144,18 @@ class TlFile(File):
                 event.find('labels').text = labels.replace(sectionMarker, scId)
                 self.novel.sections[scId] = SectionEvent(
                     self._nvSvc.new_section(
-                    status=1,
-                    scType=0,
-                    scene=0,
-                    ))
+                        status=1,
+                        scType=0,
+                        scene=0,
+                    )
+                )
 
             else:
                 try:
                     scId = sectionMatch.group()
                     self.novel.sections[scId] = SectionEvent(
-                        self.novel.sections[scId])
+                        self.novel.sections[scId]
+                    )
                 except:
                     continue
 
@@ -198,7 +200,7 @@ class TlFile(File):
             self.novel.chapters[chId] = self._nvSvc.new_chapter(
                 chType=0,
                 title=f'{_("Chapter")} 1'
-                )
+            )
             self.novel.tree.append(CH_ROOT, chId)
             for __, scList in srtSections:
                 for scId in scList:
@@ -286,7 +288,8 @@ class TlFile(File):
             ignoreUnspecific = False
         else:
             SectionEvent.defaultDateTime = datetime.today().isoformat(
-                ' ', 'seconds')
+                ' ', 'seconds'
+            )
             ignoreUnspecific = True
 
         defaultDay = 0
@@ -417,10 +420,8 @@ class TlFile(File):
                 os.replace(self.filePath, f'{self.filePath}.bak')
             except:
                 raise Error(
-                    (
-                        f'{_("Cannot overwrite file")}: '
-                        f'"{norm_path(self.filePath)}".'
-                    )
+                    f'{_("Cannot overwrite file")}: '
+                    f'"{norm_path(self.filePath)}".'
                 )
             else:
                 backedUp = True

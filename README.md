@@ -1,4 +1,4 @@
-[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v5.4.0.pyz)
+[![Download the latest release](docs/img/download-button.png)](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v5.5.0.pyz)
 [![Changelog](docs/img/changelog-button.png)](docs/changelog.md)
 [![News/Feedback](docs/img/news-button.png)](https://github.com/peter88213/novelibre/discussions)
 [![Online help](docs/img/help-button.png)](https://peter88213.github.io/nvhelp-en/nv_timeline/)
@@ -25,17 +25,17 @@ The plugin adds a **Timeline** submenu to the *novelibre* **Tools** menu and a
 ## Requirements
 
 - [Timeline 2.4+](https://sourceforge.net/projects/thetimelineproj/). Versions below 2.4 do not support labels, which are necessary for synchronization with *novelibre*.
-- [novelibre](https://github.com/peter88213/novelibre/) version 5.35+
+- [novelibre](https://github.com/peter88213/novelibre/) version 5.42+
 
 
 ## Download and install
 
 ### Default: Executable Python zip archive
 
-Download the latest release [nv_timeline_v5.4.0.pyz](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v5.4.0.pyz)
+Download the latest release [nv_timeline_v5.5.0.pyz](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v5.5.0.pyz)
 
-- Launch *nv_timeline_v5.4.0.pyz* by double-clicking (Windows desktop),
-- or execute `python nv_timeline_v5.4.0.pyz` (Windows), resp. `python3 nv_timeline_v5.4.0.pyz` (Linux) on the command line.
+- Launch *nv_timeline_v5.5.0.pyz* by double-clicking (Windows desktop),
+- or execute `python nv_timeline_v5.5.0.pyz` (Windows), resp. `python3 nv_timeline_v5.5.0.pyz` (Linux) on the command line.
 
 #### Important
 
@@ -51,9 +51,9 @@ the zip file.
 
 ### Alternative: Zip file
 
-The package is also available in zip format: [nv_timeline_v5.4.0.zip](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v5.4.0.zip)
+The package is also available in zip format: [nv_timeline_v5.5.0.zip](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v5.5.0.zip)
 
-- Extract the *nv_timeline_v5.4.0* folder from the downloaded zipfile "nv_timeline_v5.4.0.zip".
+- Extract the *nv_timeline_v5.5.0* folder from the downloaded zipfile "nv_timeline_v5.5.0.zip".
 - Move into this new folder and launch *setup.py* by double-clicking (Windows/Linux desktop), 
 - or execute `python setup.py` (Windows), resp. `python3 setup.py` (Linux) on the command line.
 

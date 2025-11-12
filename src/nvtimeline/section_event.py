@@ -18,19 +18,19 @@ class SectionEvent:
     defaultDateTime = '1900-01-01 00:00:00'
     sectionColor = '170,240,160'
 
+    sectionCnv = None
+
     def __init__(self, section):
         """Initialize instance variables from the delegate.
         
         Positional arguments:
             section: Section instance -- delegate.        
         """
-        self._section = section
-        # delegate
-
         self.scType = section.scType
         self.scene = section.scene
         self.status = section.status
         self.appendToPrev = section.appendToPrev
+        self.viewpoint = section.viewpoint
         self.goal = section.goal
         self.conflict = section.conflict
         self.outcome = section.outcome
@@ -51,6 +51,12 @@ class SectionEvent:
         self.notes = section.notes
         self.tags = section.tags
         self.wordCount = section.wordCount
+
+        self.links = section.links
+        self.fields = section.fields
+
+        self.scPlotLines = section.scPlotLines
+        self.scPlotPoints = section.scPlotPoints
 
         self.contId = None
         self._startDateTime = None
@@ -261,32 +267,3 @@ class SectionEvent:
             ET.SubElement(xmlEvent, 'default_color').text = self.sectionColor
         return dtMin, dtMax
 
-    def to_xml(self, xmlElement):
-        """Use the delegate to build a novx section branch."""
-
-        # Write back the instance variables to the delegate.
-        self._section.title = self.title
-        self._section.desc = self.desc
-        self._section.sectionContent = self.sectionContent
-        self._section.scType = self.scType
-        self._section.scene = self.scene
-        self._section.status = self.status
-        self._section.notes = self.notes
-        self._section.tags = self.tags
-        self._section.appendToPrev = self.appendToPrev
-        self._section.goal = self.goal
-        self._section.conflict = self.conflict
-        self._section.outcome = self.outcome
-        self._section.date = self.date
-        self._section.time = self.time
-        self._section.day = self.day
-        self._section.lastsMinutes = self.lastsMinutes
-        self._section.lastsHours = self.lastsHours
-        self._section.lastsDays = self.lastsDays
-        self._section.characters = self.characters
-        self._section.locations = self.locations
-        self._section.items = self.items
-        self._section.wordCount = self.wordCount
-
-        # Call the delegate method.
-        self._section.to_xml(xmlElement)
