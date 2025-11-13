@@ -31,12 +31,16 @@ timeline.
 
 Update the *novelibre* project from the timeline, if existing.
 
-> [!IMPORTANT]
-> Please make sure to save the timeline before trying to sync with
-> *novelibre*. Since *nv_timeline* reads the .timeline file, unsaved
-> changes may not be recognized. In case of doubt, close *Timeline* before
-> syncing with *novelibre*.
+---
 
+**Important**
+
+Please make sure to save the timeline before trying to sync with
+*novelibre*. Since *nv_timeline* reads the .timeline file, unsaved
+changes may not be recognized. In case of doubt, close *Timeline* before
+syncing with *novelibre*.
+
+---
 
 ### Tools > Timeline > Open Timeline
 
@@ -52,9 +56,12 @@ automatically locked.
 Open a file dialog to select a timeline. If no *novelibre* project with
 the timeline's file name exists, create a new one from the timeline.
 
-> [!IMPORTANT]
-> To become sections in *novelibre*, *Timeline* Events need a "Section"
-> label.
+---
+
+**Hint**
+
+To become sections in *novelibre*, *Timeline* Events need a "Section"
+label.
 
 ![Timeline Screenshot](images/event01.png)
 
