@@ -8,7 +8,6 @@ import os
 
 from nvlib.controller.services.nv_service import NvService
 from nvlib.model.converter.converter import Converter
-from nvlib.novx_globals import Error
 from nvlib.novx_globals import norm_path
 from nvtimeline.nvtimeline_locale import _
 from nvtimeline.tl_file import TlFile
@@ -101,7 +100,7 @@ class TlConverter(Converter):
             if os.path.isfile(target.filePath):
                 target.read()
             target.write(source.novel)
-        except Error as ex:
+        except RuntimeError as ex:
             statusMsg = f'!{str(ex)}'
             self.newFile = None
         else:

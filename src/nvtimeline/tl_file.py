@@ -13,7 +13,6 @@ from nvlib.model.file.file import File
 from nvlib.model.xml.xml_indent import indent
 from nvlib.novx_globals import CHAPTER_PREFIX
 from nvlib.novx_globals import CH_ROOT
-from nvlib.novx_globals import Error
 from nvlib.novx_globals import SECTION_PREFIX
 from nvlib.novx_globals import norm_path
 from nvtimeline.nvtimeline_locale import _
@@ -83,7 +82,7 @@ class TlFile(File):
     def read(self):
         """Parse the file and get the instance variables.
         
-        Raise the "Error" exception in case of error. 
+        Raise the "RuntimeError" exception in case of error. 
         Overrides the superclass method.
         """
 
@@ -119,7 +118,7 @@ class TlFile(File):
         try:
             self._xmlTree = ET.parse(self.filePath)
         except:
-            raise Error(
+            raise RuntimeError(
                 f'{_("Can not process file")}: "{norm_path(self.filePath)}".'
             )
         root = self._xmlTree.getroot()
@@ -215,14 +214,14 @@ class TlFile(File):
                 )
             except:
                 os.replace(f'{self.filePath}.bak', self.filePath)
-                raise Error(
+                raise RuntimeError(
                     f'{_("Cannot write file")}: "{norm_path(self.filePath)}".'
                 )
 
     def write(self, source):
         """Write instance variables to the file.
         
-        Raise the "Error" exception in case of error. 
+        Raise the "RuntimeError" exception in case of error. 
         Overrides the superclass method.
         """
 
@@ -419,7 +418,7 @@ class TlFile(File):
             try:
                 os.replace(self.filePath, f'{self.filePath}.bak')
             except:
-                raise Error(
+                raise RuntimeError(
                     f'{_("Cannot overwrite file")}: '
                     f'"{norm_path(self.filePath)}".'
                 )
@@ -434,7 +433,7 @@ class TlFile(File):
         except:
             if backedUp:
                 os.replace(f'{self.filePath}.bak', self.filePath)
-            raise Error(
+            raise RuntimeError(
                 f'{_("Cannot write file")}: "{norm_path(self.filePath)}".'
             )
 
