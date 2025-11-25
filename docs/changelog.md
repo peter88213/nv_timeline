@@ -5,6 +5,14 @@
 ## Changelog
 
 
+### Version 5.6.0
+
+- Update for novelibre 5.43.
+
+API: 5.43
+Based on novelibre 5.43.3
+
+
 ### Version 5.5.0
 
 - Update for novelibre 5.42.
