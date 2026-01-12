@@ -248,10 +248,11 @@ class TlService(ServiceBase):
         ]
         configuration = self._mdl.nvService.new_configuration(
             settings=self.SETTINGS,
-            options=self.OPTIONS
-            )
+            options=self.OPTIONS,
+        )
         for iniFile in iniFiles:
-            configuration.read(iniFile)
+            configuration.filePath = iniFile
+            configuration.read()
         configData = {}
         configData.update(configuration.settings)
         configData.update(configuration.options)

@@ -46,9 +46,13 @@ def run(sourcePath, silentMode=True, installDir='.'):
         f'{installDir}/{iniFileName}',
         f'{sourceDir}/{iniFileName}'
     ]
-    configuration = Configuration(SETTINGS, OPTIONS)
+    configuration = Configuration(
+        settings=SETTINGS,
+        options=OPTIONS,
+    )
     for iniFile in iniFiles:
-        configuration.read(iniFile)
+        configuration.filePath = iniFile
+        configuration.read()
     kwargs = {'suffix': SUFFIX}
     kwargs.update(configuration.settings)
     kwargs.update(configuration.options)
