@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.8.0\n"
+"Project-Id-Version: 5.8.1\n"
 "POT-Creation-Date: 2025-11-12 11:31:18\n"
-"PO-Revision-Date: 2026-01-12 17:42:45\n"
+"PO-Revision-Date: 2026-03-30 13:35:28\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -21,18 +21,6 @@ msgstr "1. Überarbeitung"
 
 msgid "2nd Edit"
 msgstr "2. Überarbeitung"
-
-msgid "Alt-Down"
-msgstr "Alt-Ab"
-
-msgid "Alt-Left"
-msgstr "Alt-Links"
-
-msgid "Alt-Right"
-msgstr "Alt-Rechts"
-
-msgid "Alt-Up"
-msgstr "Alt-Auf"
 
 msgid "Bio"
 msgstr "Biographie"
@@ -70,6 +58,9 @@ msgstr "Entf"
 msgid "Done"
 msgstr "Fertiggestellt"
 
+msgid "Down"
+msgstr "Ab"
+
 msgid "Draft"
 msgstr "Entwurf"
 
@@ -90,6 +81,9 @@ msgstr "Ziele"
 
 msgid "Information"
 msgstr "Information"
+
+msgid "Left"
+msgstr "Links"
 
 msgid "Major Character"
 msgstr "Hauptfigur"
@@ -115,6 +109,9 @@ msgstr "Emotionaler Höhepunkt"
 msgid "Plot progress"
 msgstr "Handlungsfortschritt"
 
+msgid "Right"
+msgstr "Rechts"
+
 msgid "Save the project and update it?"
 msgstr "Projekt speichern und aktualisieren?"
 
@@ -129,6 +126,9 @@ msgstr "Es gibt ungesicherte Änderungen"
 
 msgid "Timeline plugin Online help"
 msgstr "Timeline-Plugin Online-Hilfe"
+
+msgid "Up"
+msgstr "Auf"
 
 msgid "Update the project"
 msgstr "Das Projekt aktualisieren"
