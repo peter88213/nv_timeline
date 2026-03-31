@@ -316,6 +316,7 @@ class TlFile(File):
                     source.sections[scId],
                     defaultDay=defaultDay,
                 )
+                self.novel.sections[scId].color = source.sections[scId].color
                 self.novel.sections[scId].scType = source.sections[scId].scType
         sections = list(self.novel.sections)
         for scId in sections:

@@ -27,7 +27,7 @@ from nvtimeline.tl_service import TlService
 class Plugin(PluginBase):
     """Plugin class for synchronization with Timeline."""
     VERSION = '@release'
-    API_VERSION = '5.50'
+    API_VERSION = '5.55'
     DESCRIPTION = 'Synchronize with Timeline'
     URL = 'https://github.com/peter88213/nv_timeline'
     HELP_URL = f'{_("https://peter88213.github.io/nvhelp-en")}/nv_timeline/'
@@ -35,7 +35,7 @@ class Plugin(PluginBase):
     FEATURE = 'Timeline'
 
     DTD_MAJOR_VERSION = 1
-    DTD_MINOR_VERSION = 9
+    DTD_MINOR_VERSION = 10
     # DTD version supported by the plugin.
 
     def create_novx(self):

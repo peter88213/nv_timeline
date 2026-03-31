@@ -26,6 +26,7 @@ class SectionEvent:
         Positional arguments:
             section: Section instance -- delegate.        
         """
+        self.color = section.color
         self.scType = section.scType
         self.scene = section.scene
         self.status = section.status
