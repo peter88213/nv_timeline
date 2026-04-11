@@ -32,7 +32,7 @@ The plugin adds a **Timeline** submenu to the *novelibre* **Tools** menu and a
 
 ### Default: Executable Python zip archive
 
-Download the latest release [nv_timeline_v5.9.0.pyz](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v5.9.0.pyz)
+Download the latest release [nv_timeline_v5.9.0.pyz](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v5.9.0.pyz) (27 KB)
 
 - Launch *nv_timeline_v5.9.0.pyz* by double-clicking (Windows desktop),
 - or execute `python nv_timeline_v5.9.0.pyz` (Windows), resp. `python3 nv_timeline_v5.9.0.pyz` (Linux) on the command line.
@@ -50,7 +50,7 @@ Download the latest release [nv_timeline_v5.9.0.pyz](https://github.com/peter882
 
 ### Alternative: Zip file
 
-The package is also available in zip format: [nv_timeline_v5.9.0.zip](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v5.9.0.zip)
+The package is also available in zip format: [nv_timeline_v5.9.0.zip](https://github.com/peter88213/nv_timeline/raw/main/dist/nv_timeline_v5.9.0.zip) (28 KB)
 
 - Extract the *nv_timeline_v5.9.0* folder from the downloaded zipfile "nv_timeline_v5.9.0.zip".
 - Move into this new folder and launch *setup.py* by double-clicking (Windows/Linux desktop), 
