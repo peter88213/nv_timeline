@@ -27,28 +27,16 @@ from nvtimeline.tl_service import TlService
 class Plugin(PluginBase):
     """Plugin class for synchronization with Timeline."""
     VERSION = '@release'
-    API_VERSION = '5.55'
+    API_VERSION = '5.63'
     DESCRIPTION = 'Synchronize with Timeline'
     URL = 'https://github.com/peter88213/nv_timeline'
-    HELP_URL = f'{_("https://peter88213.github.io/nvhelp-en")}/nv_timeline/'
+    HELP_PAGE = 'nv_timeline'
 
     FEATURE = 'Timeline'
 
     DTD_MAJOR_VERSION = 1
     DTD_MINOR_VERSION = 10
     # DTD version supported by the plugin.
-
-    def create_novx(self):
-        self.timelineService.create_novx()
-
-    def export_from_novx(self):
-        self.timelineService.export_from_novx()
-
-    def import_to_novx(self):
-        self.timelineService.import_to_novx()
-
-    def info(self):
-        self.timelineService.info()
 
     def install(self, model, view, controller):
         """Install the plugin at runtime.
@@ -83,6 +71,8 @@ class Plugin(PluginBase):
         )
         self._icon = self._get_icon('tl.png')
 
+        #--- Configure the user interface.
+
         # Create a submenu in the Tools menu.
         self.pluginMenu = NvMenu()
 
@@ -99,7 +89,7 @@ class Plugin(PluginBase):
         label = _('Information')
         self.pluginMenu.add_command(
             label=label,
-            command=self.info,
+            command=self.timelineService.info,
         )
 
         self.pluginMenu.add_separator()
@@ -107,13 +97,13 @@ class Plugin(PluginBase):
         label = _('Create or update the timeline')
         self.pluginMenu.add_command(
             label=label,
-            command=self.export_from_novx,
+            command=self.timelineService.export_from_novx,
         )
 
         label = _('Update the project')
         self.pluginMenu.add_command(
             label=label,
-            command=self.import_to_novx,
+            command=self.timelineService.import_to_novx,
         )
         self.pluginMenu.disableOnLock.append(label)
 
@@ -121,7 +111,7 @@ class Plugin(PluginBase):
         self.pluginMenu.add_separator()
         self.pluginMenu.add_command(
             label=label,
-            command=self.launch_application,
+            command=self.timelineService.launch_application,
         )
 
         # Add an entry to the "File > New" menu.
@@ -130,37 +120,22 @@ class Plugin(PluginBase):
             label=label,
             image=self._icon,
             compound='left',
-            command=self.create_novx,
+            command=self.timelineService.create_novx,
         )
 
-        # Add an entry to the Help menu.
-        label = _('Timeline plugin Online help')
-        self._ui.helpMenu.add_command(
-            label=label,
-            image=self._icon,
-            compound='left',
-            command=self.open_help,
-        )
-
-        #--- Configure the toolbar.
-        self._ui.toolbar.add_separator(),
+        self._add_help_menu_entry(_('Timeline plugin help'))
 
         # Put a button on the toolbar.
+        self._ui.toolbar.add_separator(),
         self._ui.toolbar.new_button(
             text=_('Open Timeline'),
             image=self._icon,
-            command=self.launch_application,
+            command=self.timelineService.launch_application,
             disableOnLock=False,
         ).pack(side='left')
 
-    def launch_application(self):
-        self.timelineService.launch_application()
-
     def lock(self):
         self.pluginMenu.lock()
-
-    def open_help(self):
-        webbrowser.open(self.HELP_URL)
 
     def unlock(self):
         self.pluginMenu.unlock()

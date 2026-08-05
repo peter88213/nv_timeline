@@ -3,9 +3,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.9.0\n"
+"Project-Id-Version: 5.10.0\n"
 "POT-Creation-Date: 2025-11-12 11:31:18\n"
-"PO-Revision-Date: 2026-03-31 21:01:41\n"
+"PO-Revision-Date: 2026-08-05 13:47:43\n"
 "Last-Translator: Peter Triesberger\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -124,8 +124,8 @@ msgstr "Umschalt"
 msgid "There are unsaved changes"
 msgstr "Es gibt ungesicherte Änderungen"
 
-msgid "Timeline plugin Online help"
-msgstr "Timeline-Plugin Online-Hilfe"
+msgid "Timeline plugin help"
+msgstr "Timeline-Plugin Hilfe"
 
 msgid "Up"
 msgstr "Auf"
@@ -141,9 +141,6 @@ msgstr "Weltenbau"
 
 msgid "create"
 msgstr "erzeugen"
-
-msgid "https://peter88213.github.io/nvhelp-en"
-msgstr "https://peter88213.github.io/nvhelp-de"
 
 msgid "newer"
 msgstr "neuer"
