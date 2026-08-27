@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Synchronize novelibre project with Timeline
 
-Version 5.9.3
+Version 5.10.1
 Requires Python 3.7+
 Copyright (c) Peter Triesberger
 For further information see https://github.com/peter88213/nv_timeline
@@ -6842,7 +6842,7 @@ def run(sourcePath, silentMode=True, installDir='.'):
     if silentMode:
         ui = Ui('')
     else:
-        ui = UiTk(f'{_("Synchronize Timeline and novelibre")} 5.9.3')
+        ui = UiTk(f'{_("Synchronize Timeline and novelibre")} 5.10.1')
         set_icon(ui.root, icon='tlview')
 
     sourceDir = os.path.dirname(sourcePath)

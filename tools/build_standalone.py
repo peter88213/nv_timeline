@@ -12,7 +12,7 @@ from shutil import rmtree
 sys.path.insert(0, f'{os.getcwd()}/../../novelibre/tools')
 from package_builder import PackageBuilder
 
-VERSION = '5.9.3'
+VERSION = '5.10.1'
 
 
 def output(message):
@@ -41,6 +41,12 @@ class ApplicationBuilder(PackageBuilder):
         self.collect_dist_files(self.distFiles)
 
     def build_package(self):
+        return
+
+    def update_landing_page(self):
+        return
+
+    def write_version_ini(self):
         return
 
 
