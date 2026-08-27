@@ -9,7 +9,7 @@ from shutil import copyfile
 import sys
 import unittest
 
-from standalone.tl_converter import TlConverter
+from nvtimeline.tl_converter import TlConverter
 from nvlib.configuration.configuration import Configuration
 from nvlib.alternative_ui.ui import Ui
 
@@ -23,11 +23,11 @@ APPNAME = 'nv_timeline'
 SETTINGS = dict(
     section_label='Section',
     section_color='170,240,160',
-    new_event_spacing='1'
-    )
+    new_event_spacing='1',
+)
 OPTIONS = dict(
     lock_on_export=False,
-    )
+)
 
 # Test data
 TEST_NOVX = TEST_EXEC_PATH + 'yw7 Sample Project.novx'

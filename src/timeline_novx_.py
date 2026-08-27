@@ -16,7 +16,7 @@ from nvlib.gui.set_icon_tk import set_icon
 from nvlib.alternative_ui.ui import Ui
 from nvlib.alternative_ui.ui_tk import UiTk
 from nvtimeline.nvtimeline_locale import _
-from standalone.tl_converter import TlConverter
+from nvtimeline.tl_converter import TlConverter
 
 SUFFIX = ''
 APPNAME = 'nv_timeline'
