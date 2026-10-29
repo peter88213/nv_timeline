@@ -2,7 +2,7 @@
 
 Version @release
 Requires Python 3.7+
-Copyright (c) Peter Triesberger
+Copyright (c) 2024 Peter Triesberger
 For further information see https://github.com/peter88213/nv_timeline
 License: GNU GPLv3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
 
@@ -16,8 +16,6 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 """
-import webbrowser
-
 from nvtimeline.nvtimeline_locale import _
 from nvlib.controller.plugin.plugin_base import PluginBase
 from nvlib.gui.menus.nv_menu import NvMenu
